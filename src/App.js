@@ -27,7 +27,7 @@ const todoList = [
   }
 ];
 
-function App() {
+const App = () => {
   return (
     /* Fragment creation */
     <>
@@ -43,6 +43,6 @@ function App() {
       </ul>
     </>
   );
-}
+};
 
 export default App;
