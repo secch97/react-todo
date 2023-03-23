@@ -7,16 +7,24 @@ const AddTodoForm = (props) => {
     ============================
   */
 
-  const handleAddTodo = (event) => {
+  const handleFormSubmit = (event) => {
     event.preventDefault();
-    const todoTitle = event.target.title.value;
+    const todoTitle = event.target.title.value.trim();
+    /*
+      Validation:
+        - If todoTitle submitted is blank, then do not change the state.
+        Else, change the state.
+    */
+    if(!todoTitle){
+      return;
+    }
     console.log(todoTitle);
     props.onAddTodo(todoTitle);
     event.target.reset();
   };
 
   return (
-    <form onSubmit={handleAddTodo}>
+    <form onSubmit={handleFormSubmit}>
         <label htmlFor="todoTitle">Title: </label>
         <input id="todoTitle" type="text" name="title"/>
         <button type="submit">Add</button>
