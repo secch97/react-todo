@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AddTodoForm = () => {
+const AddTodoForm = (props) => {
   /*
     ============================
     =         HANDLERS         =
@@ -11,6 +11,7 @@ const AddTodoForm = () => {
     event.preventDefault();
     const todoTitle = event.target.title.value;
     console.log(todoTitle);
+    props.onAddTodo(todoTitle);
     event.target.reset();
   };
 
