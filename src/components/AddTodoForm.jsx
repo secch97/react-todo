@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AddTodoForm = (props) => {
+const AddTodoForm = ({onAddTodo}) => {
   /*
     ============================
     =         HANDLERS         =
@@ -19,7 +19,7 @@ const AddTodoForm = (props) => {
       return;
     }
     console.log(todoTitle);
-    props.onAddTodo(todoTitle);
+    onAddTodo(todoTitle);
     event.target.reset();
   };
 
