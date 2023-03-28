@@ -13,9 +13,8 @@ const AddTodoForm = ({onAddTodo}) => {
     =         HANDLERS         =
     ============================
   */
-
-  const handleTitleChange = (event) => {
-    const newTodoTitle = event.target.value;
+  const handleTitleChange = ({target}) => {
+    const newTodoTitle = target.value;
     setTodoTitle(newTodoTitle);
   }
 

@@ -5,9 +5,9 @@ const TodoList = ({todoList}) => {
   return (
     <ul>
         {
-            todoList.map((toDo) => {
+            todoList.map(({id, ...toDo}) => {
             return (
-              <TodoListItem key={toDo.id} toDo={toDo}/>
+              <TodoListItem key={id} {...toDo}/>
             );
           })
         }

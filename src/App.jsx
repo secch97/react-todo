@@ -8,28 +8,22 @@ const App = () => {
     =          STATES          =
     ============================
   */
-  const [newTodo, setNewTodo] = useState("");
   const [todoList, setTodoList] = useState([]);
-
 
   /*
     ============================
     =         HANDLERS         =
     ============================
   */
-  const handleAddTodo = (todoTitle) =>{
-    setNewTodo(todoTitle);
-  };
-
-  const addTodo = (newTodo) => {
-    setTodoList((todoList) => [newTodo, ...todoList]);
+  const handleAddTodo = (newTodo) => {
+    setTodoList((todoList) => [...todoList, newTodo]);
   };
 
   return (
       /* Fragment creation */
       <>
         <h1>Todo List</h1>
-        <AddTodoForm onAddTodo={addTodo}/>
+        <AddTodoForm onAddTodo={handleAddTodo}/>
         <TodoList todoList={todoList}/>
       </>
     );
