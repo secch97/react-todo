@@ -1,32 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const AddTodoForm = ({onAddTodo}) => {
+  /*
+    ============================
+    =          STATES          =
+    ============================
+  */
+  const [todoTitle, setTodoTitle] = useState("");
+
   /*
     ============================
     =         HANDLERS         =
     ============================
   */
 
+  const handleTitleChange = (event) => {
+    const newTodoTitle = event.target.value;
+    setTodoTitle(newTodoTitle);
+  }
+
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    const todoTitle = event.target.title.value.trim();
     /*
       Validation:
         - If todoTitle submitted is blank, then do not change the state.
         Else, change the state.
     */
-    if(!todoTitle){
+    if(!todoTitle.trim()){
       return;
     }
-    console.log(todoTitle);
-    onAddTodo(todoTitle);
+    onAddTodo(todoTitle.trim());
     event.target.reset();
   };
 
   return (
     <form onSubmit={handleFormSubmit}>
         <label htmlFor="todoTitle">Title: </label>
-        <input id="todoTitle" type="text" name="title"/>
+        <input 
+          id="todoTitle" 
+          type="text" 
+          value={todoTitle} 
+          onChange={handleTitleChange}
+          name="title"
+        />
         <button type="submit">Add</button>
     </form>
   );
