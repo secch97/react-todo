@@ -9,6 +9,8 @@ const App = () => {
     ============================
   */
   const [newTodo, setNewTodo] = useState("");
+  const [todoList, setTodoList] = useState([]);
+
 
   /*
     ============================
@@ -25,7 +27,7 @@ const App = () => {
         <h1>Todo List</h1>
         <AddTodoForm onAddTodo={handleAddTodo}/>
         <p>{newTodo}</p>
-        <TodoList/>
+        <TodoList todoList={todoList}/>
       </>
     );
 };
