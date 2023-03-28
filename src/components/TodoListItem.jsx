@@ -1,4 +1,6 @@
 import React from 'react';
+// Third party libraries:
+import PropTypes from 'prop-types';
 
 const TodoListItem = ({title}) => {
   return (
@@ -8,4 +10,13 @@ const TodoListItem = ({title}) => {
 
 export {
     TodoListItem as default
+};
+
+/*
+  ===========================
+  =       PROP-TYPES        =
+  ===========================
+*/
+TodoListItem.propTypes = {
+  title: PropTypes.string.isRequired
 };
