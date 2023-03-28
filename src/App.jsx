@@ -23,9 +23,12 @@ const App = () => {
   return (
       /* Fragment creation */
       <>
-        <h1>Todo List</h1>
-        <AddTodoForm onAddTodo={handleAddTodo}/>
-        <TodoList todoList={todoList}/>
+        <header>
+          <AddTodoForm onAddTodo={handleAddTodo}/>
+        </header>
+        <main>
+          <TodoList todoList={todoList}/>
+        </main>
       </>
     );
 };

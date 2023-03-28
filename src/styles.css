@@ -1,0 +1,232 @@
+*,
+*::before,
+*::after {
+    /* Spacing */
+    box-sizing: border-box !important;
+    /* Font */
+    font-family: 'Kanit', Arial, sans-serif;
+    /* Animation */
+    scroll-behavior: smooth;
+}
+
+html {
+    /* Overflow */
+    overflow-x: hidden;
+}
+
+body {
+    /* Display */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Spacing */
+    margin: 0px;
+    /* Sizing */
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+    /* Colors */
+    background-color: #16213E;
+}
+
+header {
+    /* Display */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Sizing */
+    width: 100%;
+}
+
+main {
+    /* Display */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 auto;
+    /* Sizing */
+    width: 100%;
+    height: 100%;
+}
+
+form {
+    /* Display */
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    /* Sizing */
+    width: 100%;
+}
+
+input, 
+button {
+    all:unset;
+}
+
+label{
+    /* Color */
+    color: white;
+    /* Font */
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+input{
+    /* Spacing */
+    padding: 10px 15px;
+    border: 3px solid #16213E;
+    border-radius: 5px;
+    /* Sizing */
+    width: 90%;
+    min-width: 80%;
+    /* Color */
+    color: black;
+    background-color: white;
+    /* Font */
+    font-size: 1.2rem;
+    font-weight: 500;
+    /* Animation */
+    transition: ease-in-out 0.5s;
+}
+
+input:focus{
+    /* Spacing */
+    border: 3px solid #E94550;
+    /* Animation */
+    transition: ease-in-out 0.5s;
+}
+
+input:active{
+    /* Spacing */
+    border: 3px solid #E94550;
+    /* Animation */
+    transition: ease-in-out 0.5s;
+}
+
+button {
+    /* Spacing */
+    padding: 10px 15px;
+    border: 3px solid #16213E;
+    border-radius: 5px;
+    /* Color */
+    background-color: white;
+    /* Font */
+    font-weight: 500;
+    font-size: 1.2rem;
+    /* Animation */
+    transition: ease-in-out 0.15s;
+}
+
+button:hover{
+    /* Cursor */
+    cursor: pointer;
+    /* Color */
+    background-color: #E94560;
+    border-color: #E94560;
+    color:white;
+    /* Animation */
+    transform: scale(1.05);
+    transition: ease-in-out 0.15s;
+}
+
+button:focus{
+    /* Spacing */
+    border-color: #E94560;
+    /* Animation */
+    transition: ease-in-out 0.3s;
+}
+
+button:active{
+    /* Animation */
+    transform: scale(0.90);
+    transition: ease-in-out 0.3s;
+}
+
+#root{
+    /* Position */
+    position: relative;
+    /* Display */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Spacing */
+    width: 100%;
+    min-height: 100vh;
+}
+
+.nav-bar-container{
+    /* Display */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 auto;
+    /* Sizing */
+    width: 100%;
+    min-width: 100%;
+    height: auto;
+    min-height: 152px;
+}
+
+.nav-bar{
+    /* Overflow */
+    overflow: hidden;
+    /* Position */
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    /* Display */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: auto;
+    /* Spacing */
+    padding: 10px;
+    margin-top: 0px;
+    /* Sizing */
+    width: 100%;
+    min-width: 100%;
+    height: auto;
+    /* Colors */
+    background-color: #16213E;
+}
+
+.nav-bar-logo-container{
+    /* Display */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    /* Spacing */
+    padding-bottom: 5px;
+    /* Sizing */
+    width: 80%;
+    min-width: 80%;
+}
+
+.nav-bar-logo-link,
+.nav-bar-logo{
+    /* Display */
+    flex: 0 1 auto;
+    /*Sizing*/
+    width: 300px;
+    min-width: 300px;
+    height: auto;
+}
+
+.nav-bar-user-controls-container{
+    /* Display */
+    display: flex;
+    flex-direction: row;
+    /* Sizing */
+    width: 80%;
+    min-width: 80%;
+}

@@ -38,17 +38,31 @@ const AddTodoForm = ({onAddTodo}) => {
   };
 
   return (
-    <form onSubmit={handleFormSubmit}>
-        <label htmlFor="todoTitle">Title: </label>
-        <input 
-          id="todoTitle" 
-          type="text" 
-          value={todoTitle} 
-          onChange={handleTitleChange}
-          name="title"
-        />
-        <button type="submit">Add</button>
-    </form>
+    <div className='nav-bar-container'>
+      <nav className="nav-bar">
+        <div className='nav-bar-logo-container'>
+          <a className='nav-bar-logo-link' href="/">
+            <img className="nav-bar-logo" src='../../images/to-do-logo.png'/>
+          </a>
+        </div>
+        <div className='nav-bar-user-controls-container'>
+          <form onSubmit={handleFormSubmit}>
+            <label htmlFor="todoTitle">Title: </label>
+            <input 
+              id="todoTitle" 
+              type="text" 
+              placeholder='Add a task'
+              value={todoTitle} 
+              onChange={handleTitleChange}
+              name="title"
+            />
+            <button type="submit">Add</button>
+          </form>
+        </div>
+        
+      </nav>
+    </div>
+    
   );
 };
 
