@@ -29,8 +29,11 @@ const AddTodoForm = ({onAddTodo}) => {
     if(!todoTitle.trim()){
       return;
     }
-    onAddTodo(todoTitle.trim());
-    event.target.reset();
+    onAddTodo({
+      title: todoTitle.trim(),
+      id: Date.now()
+    });
+    setTodoTitle("");
   };
 
   return (
