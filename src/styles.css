@@ -125,8 +125,8 @@ button:hover{
     /* Cursor */
     cursor: pointer;
     /* Color */
-    background-color: #E94560;
-    border-color: #E94560;
+    background-color: #E94550;
+    border-color: #E94550;
     color:white;
     /* Animation */
     transform: scale(1.05);
@@ -135,7 +135,7 @@ button:hover{
 
 button:focus{
     /* Spacing */
-    border-color: #E94560;
+    border-color: #E94550;
     /* Animation */
     transition: ease-in-out 0.3s;
 }
@@ -226,4 +226,63 @@ button:active{
     /* Sizing */
     width: 80%;
     min-width: 80%;
+}
+
+.todo-list-container{
+    /* Display */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Sizing */
+    width: 100%;
+    min-width: 100%;
+    height: auto;
+}
+
+.todo-list{
+    /* List styling */
+    list-style-type: none;
+    /* Display */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    /* Spacing */
+    padding: 10px;
+    margin: 10px;
+    /* Sizing */
+    width: 80%;
+    min-width: 80%;
+}
+
+.todo-list li{
+    /* Display */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* Spacing */
+    padding: 10px;
+    border: 3px solid #16213E;
+    border-radius: 5px;
+    box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.251);
+    /* Sizing */
+    width: 100%;
+    min-width: 100%;
+    /* Font */
+    font-weight: 500;
+    font-size: 1.2rem;
+    /* Color */
+    color: white;
+    background-color: #0F3460;
+    /* Animation */
+    transition: 0.2s ease-in-out;
+}
+
+.todo-list li:hover{
+    /* Spacing */
+    box-shadow: 8px 8px 0px rgba(233, 69, 96, 0.251);
+    /* Animation */
+    transform: scale(1.03);
+    transition: 0.2s ease-in-out;
 }

@@ -6,15 +6,17 @@ import PropTypes from 'prop-types';
 
 const TodoList = ({todoList}) => {
   return (
-    <ul>
+    <div className='todo-list-container'>
+      <ul className='todo-list'>
         {
-            todoList.map(({id, ...toDo}) => {
+          todoList.map(({id, ...toDo}) => {
             return (
               <TodoListItem key={id} {...toDo}/>
             );
           })
         }
-    </ul>
+      </ul>
+    </div>
   );
 };
 
