@@ -45,6 +45,7 @@ const AddTodoForm = ({onAddTodo}) => {
                 icon={["fas", "calendar-plus"]}
                 size="xl"
               />
+              <span>Title:</span>
             </label>
             <input 
               id="todoTitle" 
