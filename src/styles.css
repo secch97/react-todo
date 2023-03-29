@@ -347,3 +347,32 @@ footer{
     transform: scale(1.05);
     transition: 0.2s ease-in-out;
 }
+
+.button-top{
+    /* Position */
+    position: fixed;
+    bottom: 5px;
+    right: 10px;
+    /* Color */
+    color: white;
+    /* Animation */
+    transition: 0.3s ease-in-out;
+}
+
+.button-top:hover{
+    /* Cursor */
+    cursor: pointer;
+    /* Color */
+    color:#E94550;
+    /* Animation */
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out
+}
+
+.button-top:active{
+    /* Color */
+    color: #E94550;
+    /* Animation */
+    transform: scale(0.95);
+    transition: 0.3s ease-in-out
+}
