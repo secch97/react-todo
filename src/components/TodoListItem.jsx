@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const TodoListItem = ({title}) => {
   return (
-    <li>{title}</li>
+    <li className='animate__animated animate__backInUp animate__fast'>{title}</li>
   );
 };
 

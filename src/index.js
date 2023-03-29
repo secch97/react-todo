@@ -4,6 +4,7 @@ import App from './App';
 /* Libraries */
 import './styles.css'
 import './fontawesome'
+import 'animate.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

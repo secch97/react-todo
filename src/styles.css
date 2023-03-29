@@ -254,6 +254,8 @@ footer{
 }
 
 .todo-list{
+    /* Overflow */
+    overflow-y: hidden;
     /* List styling */
     list-style-type: none;
     /* Display */
@@ -270,6 +272,7 @@ footer{
 }
 
 .todo-list li{
+
     /* Display */
     display: flex;
     flex-direction: row;
