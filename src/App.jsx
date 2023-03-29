@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 // Components
 import TodoList from './components/TodoList';
 import NavigationBar from './components/NavigationBar';
+import Footer from './components/Footer';
 
 const App = () => {
   /*
@@ -29,6 +30,7 @@ const App = () => {
         <main>
           <TodoList todoList={todoList}/>
         </main>
+        <Footer/>
       </>
     );
 };
