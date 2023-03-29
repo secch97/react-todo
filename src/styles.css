@@ -24,8 +24,6 @@ body {
     margin: 0px;
     /* Sizing */
     width: 100%;
-    height: 100vh;
-    min-height: 100vh;
     /* Colors */
     background-color: #16213E;
 }
@@ -38,6 +36,8 @@ header {
     align-items: center;
     /* Sizing */
     width: 100%;
+    height: auto;
+    min-height: 152px;
 }
 
 main {
@@ -45,7 +45,6 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 1 1 auto;
     /* Sizing */
     width: 100%;
     height: 100%;
@@ -82,8 +81,8 @@ input{
     border: 3px solid #16213E;
     border-radius: 5px;
     /* Sizing */
-    width: 90%;
-    min-width: 80%;
+    width: 85%;
+    min-width: 85%;
     /* Color */
     color: black;
     background-color: white;
@@ -153,7 +152,6 @@ button:active{
     /* Display */
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     /* Spacing */
     width: 100%;
@@ -170,8 +168,7 @@ button:active{
     /* Sizing */
     width: 100%;
     min-width: 100%;
-    height: auto;
-    min-height: 152px;
+
 }
 
 .nav-bar{

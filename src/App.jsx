@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 // Components
 import TodoList from './components/TodoList';
-import AddTodoForm from './components/AddTodoForm';
+import NavigationBar from './components/NavigationBar';
 
 const App = () => {
   /*
@@ -24,7 +24,7 @@ const App = () => {
       /* Fragment creation */
       <>
         <header>
-          <AddTodoForm onAddTodo={handleAddTodo}/>
+          <NavigationBar onAddTodo={handleAddTodo}/>
         </header>
         <main>
           <TodoList todoList={todoList}/>

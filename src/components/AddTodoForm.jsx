@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 // Third party libraries:
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const AddTodoForm = ({onAddTodo}) => {
   /*
@@ -38,16 +39,13 @@ const AddTodoForm = ({onAddTodo}) => {
   };
 
   return (
-    <div className='nav-bar-container'>
-      <nav className="nav-bar">
-        <div className='nav-bar-logo-container'>
-          <a className='nav-bar-logo-link' href="/">
-            <img className="nav-bar-logo" src='../../images/to-do-logo.png'/>
-          </a>
-        </div>
-        <div className='nav-bar-user-controls-container'>
           <form onSubmit={handleFormSubmit}>
-            <label htmlFor="todoTitle">Title: </label>
+            <label htmlFor="todoTitle">
+            <FontAwesomeIcon
+                icon={["fas", "calendar-plus"]}
+                size="xl"
+              />
+            </label>
             <input 
               id="todoTitle" 
               type="text" 
@@ -58,11 +56,6 @@ const AddTodoForm = ({onAddTodo}) => {
             />
             <button type="submit">Add</button>
           </form>
-        </div>
-        
-      </nav>
-    </div>
-    
   );
 };
 
