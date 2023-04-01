@@ -1,47 +1,34 @@
 import React from 'react';
+// Components
 import TodoListItem from './TodoListItem';
+// Third party libraries:
+import PropTypes from 'prop-types';
 
-const todoList = [
-    {
-      id: 1,
-      title: "Read lesson 1.1 resources"
-    },
-    {
-      id: 2,
-      title: "Complete the Road to React book's exercises"
-    },
-    {
-      id: 3,
-      title: "Watch lesson 1.1 videos"
-    },
-    {
-      id: 4,
-      title: "Complete lesson 1.1 assignment"
-    },
-    {
-      id: 5,
-      title: "Create pull request of lesson 1.1 assignment"
-    },
-    {
-      id: 6,
-      title: "Submit lesson 1.1 assignment"
-    }
-];
-
-const TodoList = () => {
+const TodoList = ({todoList}) => {
   return (
-    <ul>
+    <div className='todo-list-container'>
+      <ul className='todo-list'>
         {
-          todoList.map((toDo) => {
+          todoList.map(({id, ...toDo}) => {
             return (
-              <TodoListItem key={toDo.id} toDo={toDo}/>
+              <TodoListItem key={id} {...toDo}/>
             );
           })
         }
-    </ul>
+      </ul>
+    </div>
   );
 };
 
 export {
     TodoList as default
 };
+
+/*
+  ===========================
+  =       PROP-TYPES        =
+  ===========================
+*/
+TodoList.propTypes = {
+  todoList: PropTypes.array.isRequired
+}
