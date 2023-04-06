@@ -5,10 +5,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const TodoListItem = ({id, title, onRemoveTodo}) => {
 
+  /*
+    ==================================
+    =             HOOKS              =
+    ==================================
+  */
+  /* States */
   const [isRemoved, setIsRemoved] = useState(false);
-
+  /* Refs */
   const listItemRef = useRef();
-
+  /* Effects */
   useEffect(()=>{
     if(isRemoved){
       listItemRef.current.className="animate__animated animate__fadeOut animate__fast"
@@ -16,6 +22,11 @@ const TodoListItem = ({id, title, onRemoveTodo}) => {
     }
   }, [isRemoved]);
 
+  /*
+    ==================================
+    =            HANDLERS            =
+    ==================================
+  */
   const handleRemoveTodo = () => {
     setIsRemoved(true);
     setTimeout(() => {
