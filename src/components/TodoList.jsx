@@ -4,14 +4,18 @@ import TodoListItem from './TodoListItem';
 // Third party libraries:
 import PropTypes from 'prop-types';
 
-const TodoList = ({todoList}) => {
+const TodoList = ({todoList, onRemoveTodo}) => {
   return (
     <div className='todo-list-container'>
       <ul className='todo-list'>
         {
-          todoList.map(({id, ...toDo}) => {
+          todoList.map((toDo) => {
             return (
-              <TodoListItem key={id} {...toDo}/>
+              <TodoListItem 
+                key={toDo.id} 
+                {...toDo}
+                onRemoveTodo={onRemoveTodo}
+              />
             );
           })
         }
