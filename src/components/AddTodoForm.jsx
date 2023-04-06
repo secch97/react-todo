@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 // Third party libraries:
 import PropTypes from 'prop-types';
 import InputWithLabel from "./InputWithLabel"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const AddTodoForm = ({onAddTodo}) => {
   /*
@@ -41,14 +42,19 @@ const AddTodoForm = ({onAddTodo}) => {
   return (
     <form onSubmit={handleFormSubmit}>
       <InputWithLabel
-        labelText="Title:"
         inputId="todoTitle"
         inputType="text"
         inputPlaceholder="Add a task"
         inputValue={todoTitle}
         inputName = "title"
         inputOnChange={handleTitleChange}
-      />
+      >
+        <FontAwesomeIcon 
+          icon={["fas", "calendar-plus"]} 
+          size="xl" 
+        />
+        <span>Title: </span>
+      </InputWithLabel>
       <button type="submit">Add</button>
     </form>
   );

@@ -1,15 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
-const InputWithLabel = ({labelText, inputId, inputType="text", inputPlaceholder, inputValue, inputName, inputOnChange}) => {
+const InputWithLabel = ({children, inputId, inputType="text", inputPlaceholder, inputValue, inputName, inputOnChange}) => {
   return (
     <>
       <label htmlFor={inputId}>
-        <FontAwesomeIcon 
-            icon={["fas", "calendar-plus"]} 
-            size="xl" 
-        />
-        <span>{labelText}</span>
+        {children}
       </label>
       <input
         id={inputId}
