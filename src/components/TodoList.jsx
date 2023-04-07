@@ -33,10 +33,9 @@ const TodoList = ({todoList, onRemoveTodo}) => {
         {
           todoList.map((toDo) => {
             return (
-              <>
-                {/* F: Once the list is re rendered: if there is a listItem id that matched an id that 
+                /* F: Once the list is re rendered: if there is a listItem id that matched an id that 
                 needs to be removed, send the attribute isRemoved as true to the listItem
-                */}
+                */
                 <TodoListItem 
                   key={toDo.id} 
                   {...toDo}
@@ -44,7 +43,6 @@ const TodoList = ({todoList, onRemoveTodo}) => {
                   onRemoveTodoAnimation={handleRemoveTodoAnimation}
                   onRemoveTodo={handleRemoveTodo}
                 />
-              </>
             );
           })
         }

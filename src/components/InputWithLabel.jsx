@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useRef } from "react";
+import PropTypes from "prop-types";
 
 const InputWithLabel = ({children, inputId, inputType="text", inputPlaceholder, inputValue, inputName, inputOnChange}) => {
   /*
@@ -39,4 +40,14 @@ const InputWithLabel = ({children, inputId, inputType="text", inputPlaceholder, 
 
 export { 
   InputWithLabel as default 
+};
+
+InputWithLabel.propTypes = {
+  children: PropTypes.array.isRequired,
+  inputId: PropTypes.string.isRequired,
+  inputType: PropTypes.string,
+  inputPlaceholder: PropTypes.string.isRequired,
+  inputValue: PropTypes.string.isRequired,
+  inputName: PropTypes.string.isRequired,
+  inputOnChange: PropTypes.func.isRequired
 };
