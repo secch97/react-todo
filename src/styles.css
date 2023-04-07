@@ -7,6 +7,8 @@
     font-family: 'Kanit', Arial, sans-serif;
     /* Animation */
     scroll-behavior: smooth;
+    /* Overflow */
+    overflow-x: hidden;
 }
 
 html {
@@ -338,7 +340,6 @@ footer{
     /* Spacing */
     box-shadow: 8px 8px 0px rgba(233, 69, 96, 0.251);
     /* Animation */
-    transform: scale(1.03);
     transition: 0.2s ease-in-out;
 }
 
