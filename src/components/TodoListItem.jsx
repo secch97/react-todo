@@ -22,7 +22,6 @@ const TodoListItem = ({id, title, isRemoved, onRemoveTodoAnimation, onRemoveTodo
   */
   useEffect(()=>{
     if(isRemoved){
-      setIsAnimating(true);
       onRemoveTodo(id);
     }
   }, [isRemoved]);
@@ -46,10 +45,10 @@ const TodoListItem = ({id, title, isRemoved, onRemoveTodoAnimation, onRemoveTodo
 
   return (
     <li 
-      className={isAnimating ? 'animate__animated animate__fadeOut animate__faster' : "animate__animated animate__bounceInUp animate__faster"}
+      className={isAnimating ? 'animate__animated animate__backOutRight animate__faster' : "animate__animated animate__fadeIn animate__faster"}
       onAnimationEnd={handleAnimationEnd}
       >
-      {title}
+      <span>{title}</span>
       {/*B: Add onClick event to trigger handleRemoveTodo*/}
       <button 
         className='button-icon'

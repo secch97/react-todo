@@ -7,8 +7,6 @@
     font-family: 'Kanit', Arial, sans-serif;
     /* Animation */
     scroll-behavior: smooth;
-    /* Overflow */
-    overflow-x: hidden;
 }
 
 html {
@@ -296,6 +294,7 @@ footer{
 .todo-list{
     /* Overflow */
     overflow-y: hidden;
+    overflow-x: hidden;
     /* List styling */
     list-style-type: none;
     /* Display */
@@ -312,12 +311,12 @@ footer{
 }
 
 .todo-list li{
-
     /* Display */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
     /* Spacing */
     padding: 10px;
     border: 3px solid #16213E;
@@ -334,6 +333,14 @@ footer{
     background-color: #0F3460;
     /* Animation */
     transition: 0.2s ease-in-out;
+}
+
+.todo-list li span{
+    display: flex;
+    justify-content: center;
+    /*Text decoration*/
+    text-align: justify;
+
 }
 
 .todo-list li:hover{
@@ -450,5 +457,17 @@ footer{
     form label span{
         /* Display */
         display: flex;
+    }
+}
+
+@media (max-width: 768px){
+    .todo-list li{
+        /*Display*/
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .todo-list li span{
+        justify-content: center;
     }
 }
