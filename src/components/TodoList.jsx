@@ -1,10 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 // Components
 import TodoListItem from './TodoListItem';
 // Third party libraries:
 import PropTypes from 'prop-types';
 
 const TodoList = ({todoList, onRemoveTodo}) => {
+  /*
+    ==================================
+    =             HOOKS              =
+    ==================================
+  */
+  const [removedIds, setRemovedIds] = useState([]);
+  
+  /*
+    ==================================
+    =            HANDLERS            =
+    ==================================
+  */
+  const handleRemoveTodoAnimation = (id) => {
+    setRemovedIds((prevIds) => [...prevIds, id]);
+  };
+
+  const handleRemoveTodo = (id) => {
+    onRemoveTodo(id);
+  }
+
   return (
     <div className='todo-list-container'>
       <ul className='todo-list'>
@@ -14,7 +34,9 @@ const TodoList = ({todoList, onRemoveTodo}) => {
               <TodoListItem 
                 key={toDo.id} 
                 {...toDo}
-                onRemoveTodo={onRemoveTodo}
+                isRemoved={removedIds.includes(toDo.id)}
+                onRemoveTodoAnimation={handleRemoveTodoAnimation}
+                onRemoveTodo={handleRemoveTodo}
               />
             );
           })

@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const TodoListItem = ({id, title, onRemoveTodo}) => {
+const TodoListItem = ({id, title, isRemoved, onRemoveTodoAnimation, onRemoveTodo}) => {
 
   /*
     ==================================
@@ -11,14 +11,15 @@ const TodoListItem = ({id, title, onRemoveTodo}) => {
     ==================================
   */
   /* States */
-  const [isRemoved, setIsRemoved] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
   /* Refs */
   const listItemRef = useRef();
   /* Effects */
   useEffect(()=>{
     if(isRemoved){
+      setIsAnimating(true);
       listItemRef.current.className="animate__animated animate__fadeOut animate__fast"
-      return;
+      onRemoveTodo(id);
     }
   }, [isRemoved]);
 
@@ -28,14 +29,22 @@ const TodoListItem = ({id, title, onRemoveTodo}) => {
     ==================================
   */
   const handleRemoveTodo = () => {
-    setIsRemoved(true);
+    setIsAnimating(true);
     setTimeout(() => {
-      onRemoveTodo(id);
-    }, 1000);
+      onRemoveTodoAnimation(id);
+    }, 500)
   }
 
+  const handleAnimationEnd = () => {
+    setIsAnimating(false);
+  };
+
   return (
-    <li ref={listItemRef} className='animate__animated animate__backInUp animate__fast'>
+    <li 
+      ref={listItemRef} 
+      className={isAnimating ? 'animate__animated animate__fadeOut animate__faster' : "animate__animated animate__backInUp animate__faster"}
+      onAnimationEnd={handleAnimationEnd}
+      >
       {title}
       <button 
         className='button-icon'
