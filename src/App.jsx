@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 // Components
 import TodoList from './components/TodoList';
 import NavigationBar from './components/NavigationBar';
@@ -8,13 +8,24 @@ import { scrollToTop } from './helpers/scrollToTop';
 // Third party libraries
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+const useSemiPersistentState = () => {
+  const [todoList, setTodoList] = useState(JSON.parse(localStorage.getItem("savedTodoList")) ?? []);
+
+  useEffect(()=>{
+    localStorage.setItem("savedTodoList", JSON.stringify(todoList));
+  }, [todoList]);
+
+  return [todoList, setTodoList];
+};
+
+
 const App = () => {
   /*
     ============================
-    =          STATES          =
+    =           HOOKS          =
     ============================
   */
-  const [todoList, setTodoList] = useState([]);
+  const [todoList, setTodoList] = useSemiPersistentState();
 
   /*
     ============================
