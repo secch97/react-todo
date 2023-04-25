@@ -63,7 +63,10 @@ const App = () => {
           <NavigationBar onAddTodo={handleAddTodo}/>
         </header>
         <main>
-          <TodoList todoList={todoList} onRemoveTodo={handleRemoveTodo}/>
+          {
+            isLoading ? (<p>Loading...</p>) : (<TodoList todoList={todoList} onRemoveTodo={handleRemoveTodo}/>)
+          }
+          
         </main>
         <Footer/>
         <a className='button-top' onClick={scrollToTop}>
