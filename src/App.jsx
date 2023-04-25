@@ -64,7 +64,14 @@ const App = () => {
         </header>
         <main>
           {
-            isLoading ? (<p>Loading...</p>) : (<TodoList todoList={todoList} onRemoveTodo={handleRemoveTodo}/>)
+            isLoading ? 
+            (
+              <div className='loading-screen-container'>
+                <FontAwesomeIcon icon={["fas", "spinner"]} size="5x" spin className='loading-screen'/>
+              </div>
+            ) 
+            : 
+            (<TodoList todoList={todoList} onRemoveTodo={handleRemoveTodo}/>)
           }
           
         </main>
