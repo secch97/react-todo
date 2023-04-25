@@ -60,7 +60,7 @@ const App = () => {
       /* Fragment creation */
       <>
         <header>
-          <NavigationBar onAddTodo={handleAddTodo}/>
+          <NavigationBar onAddTodo={handleAddTodo} isLoading={isLoading}/>
         </header>
         <main>
           {

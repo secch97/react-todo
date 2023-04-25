@@ -122,6 +122,16 @@ input:active{
     transition: ease-in-out 0.5s;
 }
 
+input:disabled,
+input:disabled:active
+{
+    /* Color */
+    background-color: lightgrey;
+    border-color: grey;
+    transform: scale(1);
+    color: black
+}
+
 button {
     /* Spacing */
     padding: 10px 15px;
@@ -161,6 +171,16 @@ button:active{
     /* Animation */
     transform: scale(0.90);
     transition: ease-in-out 0.3s;
+}
+
+button:disabled,
+button:disabled:hover
+{
+    /* Color */
+    background-color: grey;
+    border-color: grey;
+    transform: scale(1);
+    color: black
 }
 
 .loading-screen-container{

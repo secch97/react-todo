@@ -4,7 +4,7 @@ import AddTodoForm from './AddTodoForm';
 // Third party libraries:
 import PropTypes from 'prop-types';
 
-const NavigationBar = ({onAddTodo}) => {
+const NavigationBar = ({onAddTodo, isLoading}) => {
   return (
     <div className='nav-bar-container'>
       <nav className="nav-bar">
@@ -14,7 +14,7 @@ const NavigationBar = ({onAddTodo}) => {
           </a>
         </div>
         <div className='nav-bar-user-controls-container'>
-          <AddTodoForm onAddTodo={onAddTodo}/>
+          <AddTodoForm onAddTodo={onAddTodo} isLoading={isLoading}/>
         </div>
       </nav>
     </div>
