@@ -15,7 +15,9 @@ const App = () => {
     ============================
   */
   const [todoList, setTodoList] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
+  /* Insert todoList to app from localStorage*/
   useEffect(() => {
     const todoListFetch = new Promise((resolve, reject) => {
       setTimeout(() => {
@@ -27,12 +29,17 @@ const App = () => {
       }, 2000);
     });
 
-    todoListFetch.then((result) => setTodoList(result.data.todoList))
+    todoListFetch.then((result) => {
+      setTodoList(result.data.todoList);
+      setIsLoading(false);
+    });
   }, []);
 
-  /* Insert todoList into app from localStorage*/
+  /* Insert todoList from app to localStorage*/
   useEffect(()=>{
-    localStorage.setItem("savedTodoList", JSON.stringify(todoList));
+    if(!isLoading){
+      localStorage.setItem("savedTodoList", JSON.stringify(todoList));
+    }
   }, [todoList]);
 
   /*
