@@ -1,17 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
 // Components
 import TodoListItem from './TodoListItem';
 // Third party libraries:
 import PropTypes from 'prop-types';
 
-const TodoList = ({todoList}) => {
+const TodoList = ({todoList, onRemoveTodo}) => {
+  /*
+    ==================================
+    =             HOOKS              =
+    ==================================
+  */
+  //D: Store as a state the IDs we want to remove.
+  const [removedIds, setRemovedIds] = useState([]);
+
+  /*
+    ==================================
+    =            HANDLERS            =
+    ==================================
+  */
+ //E: Once this function is called, we want to add the id that need to be removed to the removedIds state to trigger a re render of the list.
+  const handleRemoveTodoAnimation = (id) => {
+    setRemovedIds((prevIds) => [...prevIds, id]);
+  };
+
+  const handleRemoveTodo = (id) => {
+    onRemoveTodo(id);
+  }
+
   return (
     <div className='todo-list-container'>
       <ul className='todo-list'>
         {
-          todoList.map(({id, ...toDo}) => {
+          todoList.map((toDo) => {
             return (
-              <TodoListItem key={id} {...toDo}/>
+                /* F: Once the list is re rendered: if there is a listItem id that matched an id that 
+                needs to be removed, send the attribute isRemoved as true to the listItem
+                */
+                <TodoListItem 
+                  key={toDo.id} 
+                  {...toDo}
+                  isRemoved={removedIds.includes(toDo.id)}
+                  onRemoveTodoAnimation={handleRemoveTodoAnimation}
+                  onRemoveTodo={handleRemoveTodo}
+                />
             );
           })
         }

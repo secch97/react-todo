@@ -36,6 +36,11 @@ const App = () => {
     setTodoList((todoList) => [...todoList, newTodo]);
   };
 
+  const handleRemoveTodo = (id) => {
+    const newTodoList = todoList.filter((toDo) => toDo.id !== id);
+    setTodoList(newTodoList);
+  }
+
   return (
       /* Fragment creation */
       <>
@@ -43,7 +48,7 @@ const App = () => {
           <NavigationBar onAddTodo={handleAddTodo}/>
         </header>
         <main>
-          <TodoList todoList={todoList}/>
+          <TodoList todoList={todoList} onRemoveTodo={handleRemoveTodo}/>
         </main>
         <Footer/>
         <a className='button-top' onClick={scrollToTop}>
