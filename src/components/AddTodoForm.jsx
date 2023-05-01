@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import InputWithLabel from "./InputWithLabel"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const AddTodoForm = ({onAddTodo}) => {
+const AddTodoForm = ({onAddTodo, isLoading}) => {
   /*
     ============================
     =          STATES          =
@@ -48,6 +48,7 @@ const AddTodoForm = ({onAddTodo}) => {
         inputValue={todoTitle}
         inputName = "title"
         inputOnChange={handleTitleChange}
+        isLoading={isLoading}
       >
         <FontAwesomeIcon 
           icon={["fas", "calendar-plus"]} 
@@ -55,7 +56,7 @@ const AddTodoForm = ({onAddTodo}) => {
         />
         <span>Title: </span>
       </InputWithLabel>
-      <button type="submit">Add</button>
+      <button type="submit" disabled={isLoading}>Add</button>
     </form>
   );
 };

@@ -8,24 +8,39 @@ import { scrollToTop } from './helpers/scrollToTop';
 // Third party libraries
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const useSemiPersistentState = () => {
-  const [todoList, setTodoList] = useState(JSON.parse(localStorage.getItem("savedTodoList")) ?? []);
-
-  useEffect(()=>{
-    localStorage.setItem("savedTodoList", JSON.stringify(todoList));
-  }, [todoList]);
-
-  return [todoList, setTodoList];
-};
-
-
 const App = () => {
   /*
     ============================
     =           HOOKS          =
     ============================
   */
-  const [todoList, setTodoList] = useSemiPersistentState();
+  const [todoList, setTodoList] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  /* Insert todoList to app from localStorage*/
+  useEffect(() => {
+    const todoListFetch = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve({
+          data: {
+            todoList: JSON.parse(localStorage.getItem("savedTodoList")) ?? []
+          }
+        })
+      }, 2000);
+    });
+
+    todoListFetch.then((result) => {
+      setTodoList(result.data.todoList);
+      setIsLoading(false);
+    });
+  }, []);
+
+  /* Insert todoList from app to localStorage*/
+  useEffect(()=>{
+    if(!isLoading){
+      localStorage.setItem("savedTodoList", JSON.stringify(todoList));
+    }
+  }, [todoList]);
 
   /*
     ============================
@@ -45,10 +60,20 @@ const App = () => {
       /* Fragment creation */
       <>
         <header>
-          <NavigationBar onAddTodo={handleAddTodo}/>
+          <NavigationBar onAddTodo={handleAddTodo} isLoading={isLoading}/>
         </header>
         <main>
-          <TodoList todoList={todoList} onRemoveTodo={handleRemoveTodo}/>
+          {
+            isLoading ? 
+            (
+              <div className='loading-screen-container'>
+                <FontAwesomeIcon icon={["fas", "spinner"]} size="5x" spin className='loading-screen'/>
+              </div>
+            ) 
+            : 
+            (<TodoList todoList={todoList} onRemoveTodo={handleRemoveTodo}/>)
+          }
+          
         </main>
         <Footer/>
         <a className='button-top' onClick={scrollToTop}>

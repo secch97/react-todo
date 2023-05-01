@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 
-const InputWithLabel = ({children, inputId, inputType="text", inputPlaceholder, inputValue, inputName, inputOnChange}) => {
+const InputWithLabel = ({children, inputId, inputType="text", inputPlaceholder, inputValue, inputName, inputOnChange, isLoading}) => {
   /*
     ============================
     =          HOOKS           =
@@ -33,6 +33,7 @@ const InputWithLabel = ({children, inputId, inputType="text", inputPlaceholder, 
         value={inputValue}
         name={inputName}
         onChange={inputOnChange}
+        disabled={isLoading}
       />
     </>
   );
