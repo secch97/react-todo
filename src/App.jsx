@@ -19,7 +19,7 @@ const App = () => {
 
   /* Insert todoList to app from localStorage*/
   useEffect(() => {
-    const todoListFetch = new Promise((resolve, reject) => {
+    new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve({
           data: {
@@ -27,9 +27,7 @@ const App = () => {
           }
         })
       }, 2000);
-    });
-
-    todoListFetch.then((result) => {
+    }).then((result) => {
       setTodoList(result.data.todoList);
       setIsLoading(false);
     });
