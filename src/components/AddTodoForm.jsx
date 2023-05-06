@@ -34,7 +34,7 @@ const AddTodoForm = ({onAddTodo, isLoading}) => {
     }
     onAddTodo({
       title: todoTitle.trim(),
-      id: Date.now()
+      createdAt: Date.now()
     });
     setTodoTitle("");
   };
