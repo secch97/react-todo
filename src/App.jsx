@@ -17,20 +17,38 @@ const App = () => {
   const [todoList, setTodoList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  /* Async function */
+  const fetchData = async () => {
+    const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${process.env.REACT_APP_TABLE_NAME}\\`;
+    const options = {
+      method:"GET",
+      headers: {
+        Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_KEY}`
+      }
+    };
+    try{
+      const response = await fetch(url, options);
+      if (!response.ok){
+        throw new Error(`${response.status}`);
+      }
+      const data = await response.json();
+      const todos = data.records.map((todo) => {
+        return {
+          title: todo.fields.title,
+          id:todo.id
+        };
+      });
+      setTodoList(todos);
+      setIsLoading(false);
+    }catch(error){
+      console.log(`Error fetching data: ${error}`)
+    }
+
+  }
+
   /* Insert todoList to app from localStorage*/
   useEffect(() => {
-    new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve({
-          data: {
-            todoList: JSON.parse(localStorage.getItem("savedTodoList")) ?? []
-          }
-        })
-      }, 2000);
-    }).then((result) => {
-      setTodoList(result.data.todoList);
-      setIsLoading(false);
-    });
+    fetchData();
   }, []);
 
   /* Insert todoList from app to localStorage*/

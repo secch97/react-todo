@@ -70,7 +70,7 @@ export {
   ===========================
 */
 TodoListItem.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   isRemoved: PropTypes.bool.isRequired,
   onRemoveTodoAnimation: PropTypes.func.isRequired,
