@@ -79,6 +79,26 @@ const App = () => {
     }
   };
 
+  const deleteData = async(id) => {
+    const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${process.env.REACT_APP_TABLE_NAME}/${id}\\`;
+    const options = {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_KEY}`
+      }
+    };
+    try{
+      const response = await fetch(url, options);
+      if(!response.ok){
+        throw new Error(`${response.status}`);
+      }
+      const data = await response.json();
+      return data;
+    } catch(error){
+      console.log(`Error: ${error}`);
+    }
+  };
+
   /* Insert todoList to app from localStorage*/
   useEffect(() => {
     fetchData();
@@ -103,9 +123,15 @@ const App = () => {
     }
   };
 
-  const handleRemoveTodo = (id) => {
-    const newTodoList = todoList.filter((toDo) => toDo.id !== id);
-    setTodoList(newTodoList);
+  const handleRemoveTodo = async (id) => {
+    const deletedTodo = await deleteData(id);
+    if(deletedTodo.deleted){
+      const newTodoList = todoList.filter((toDo) => toDo.id !== id);
+      setTodoList(newTodoList);
+    }
+    else{
+      return;
+    }
   }
 
   return (
