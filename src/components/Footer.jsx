@@ -9,7 +9,7 @@ const Footer = () => {
     <footer>
         <div className="footer-nav-container">
             <nav className='footer-nav'>
-                <a className='footer-item'>© Saul Castillo | {getCurrentYear()}</a>
+                <a className='footer-item' href="#">© Saul Castillo | {getCurrentYear()}</a>
                 <a className='footer-item' href='https://github.com/secch97' target={"_blank"}>
                     <FontAwesomeIcon className="brand" icon={["fab", "github"]} size="2x"></FontAwesomeIcon>
                 </a>

@@ -99,7 +99,7 @@ const App = () => {
     }
   };
 
-  /* Insert todoList to app from localStorage*/
+  /* Insert todoList to airtable database*/
   useEffect(() => {
     fetchData();
   }, []);
