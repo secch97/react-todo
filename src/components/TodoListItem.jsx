@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 // Third party libraries:
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -36,7 +36,7 @@ const TodoListItem = ({id, title, isRemoved, onRemoveTodoAnimation, onRemoveTodo
     setIsAnimating(true);
     setTimeout(() => {
       onRemoveTodoAnimation(id);
-    }, 500);
+    }, 300);
   }
 
   const handleAnimationEnd = () => {
@@ -70,7 +70,7 @@ export {
   ===========================
 */
 TodoListItem.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   isRemoved: PropTypes.bool.isRequired,
   onRemoveTodoAnimation: PropTypes.func.isRequired,
