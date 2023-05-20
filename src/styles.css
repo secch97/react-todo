@@ -221,6 +221,15 @@ button:disabled:hover
     transition: ease-in-out 0.15s;
 }
 
+.button-icon:disabled,
+.button-icon:disabled:hover,
+.button-icon:disabled:hover *{
+    /* Color */
+    background-color: grey;
+    color: white;
+}
+
+
 .button-icon:focus{
     /* Spacing */
     border-color: white;
