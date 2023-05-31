@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 // Components
 import TodoList from './components/TodoList';
 import NavigationBar from './components/NavigationBar';
@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import { scrollToTop } from './helpers/scrollToTop';
 // Third party libraries
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const App = () => {
   /*
@@ -136,28 +137,44 @@ const App = () => {
 
   return (
       /* Fragment creation */
-      <>
-        <header>
-          <NavigationBar onAddTodo={handleAddTodo} isLoading={isLoading}/>
-        </header>
-        <main>
-          {
-            isLoading ? 
-            (
-              <div className='loading-screen-container'>
-                <FontAwesomeIcon icon={["fas", "spinner"]} size="5x" spin className='loading-screen'/>
-              </div>
-            ) 
-            : 
-            (<TodoList todoList={todoList} onRemoveTodo={handleRemoveTodo}/>)
-          }
-          
-        </main>
-        <Footer/>
-        <a className='button-top' onClick={scrollToTop}>
-          <FontAwesomeIcon icon={["fas", "circle-up"]} size="2x"/>
-        </a>
-      </>
+      <BrowserRouter>
+        <Routes>
+          <Route 
+            path="/" 
+            exact
+            element={(
+              <>
+                <header>
+                  <NavigationBar onAddTodo={handleAddTodo} isLoading={isLoading}/>
+                </header>
+                <main>
+                  {
+                    isLoading ? 
+                    (
+                      <div className='loading-screen-container'>
+                        <FontAwesomeIcon icon={["fas", "spinner"]} size="5x" spin className='loading-screen'/>
+                      </div>
+                    ) 
+                    : 
+                    (<TodoList todoList={todoList} onRemoveTodo={handleRemoveTodo}/>)
+                  }
+                  
+                </main>
+                <Footer/>
+                <a className='button-top' onClick={scrollToTop}>
+                  <FontAwesomeIcon icon={["fas", "circle-up"]} size="2x"/>
+                </a>
+              </>
+            )}
+          > 
+          </Route>
+          <Route
+            path="/new"
+            element={(<h1>New Todo List</h1>)}
+          >
+          </Route>
+        </Routes>
+      </BrowserRouter>
     );
 };
 

@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const TodoListItem = ({id, title, isRemoved, onRemoveTodoAnimation, onRemoveTodo}) => {
-
+const TodoListItem = ({id, title, isRemoved, onRemoveTodoAnimation, onRemoveTodo, isDisable, onDisable}) => {
+  console.log()
   /*
     ==================================
     =             HOOKS              =
@@ -34,9 +34,13 @@ const TodoListItem = ({id, title, isRemoved, onRemoveTodoAnimation, onRemoveTodo
   const handleRemoveTodo = () => {
     //C: Set animation status to true to re render listItem. After 0.5s, call onRemoveTodoAnimation passing the id of the <li> we want to animate
     setIsAnimating(true);
+    onDisable(true);
     setTimeout(() => {
       onRemoveTodoAnimation(id);
-    }, 300);
+      setTimeout(() => {
+        onDisable(false);
+      }, 400)
+    }, 200);
   }
 
   const handleAnimationEnd = () => {
@@ -53,6 +57,7 @@ const TodoListItem = ({id, title, isRemoved, onRemoveTodoAnimation, onRemoveTodo
       <button 
         className='button-icon'
         onClick={handleRemoveTodo}
+        disabled={!isDisable? false: true}
       >
         <FontAwesomeIcon icon={["fas", "trash-can"]} size="sm"/>
       </button>

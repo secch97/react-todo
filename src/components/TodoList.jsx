@@ -12,6 +12,7 @@ const TodoList = ({todoList, onRemoveTodo}) => {
   */
   //D: Store as a state the IDs we want to remove.
   const [removedIds, setRemovedIds] = useState([]);
+  const [disable, setDisable] = useState(false);
 
   /*
     ==================================
@@ -25,7 +26,12 @@ const TodoList = ({todoList, onRemoveTodo}) => {
 
   const handleRemoveTodo = (id) => {
     onRemoveTodo(id);
-  }
+  };
+
+  const handleDisableButtons = (status) => {
+    console.log("I will disable other buttons " + status)
+    setDisable(status);
+  };
 
   return (
     <div className='todo-list-container'>
@@ -42,6 +48,8 @@ const TodoList = ({todoList, onRemoveTodo}) => {
                   isRemoved={removedIds.includes(toDo.id)}
                   onRemoveTodoAnimation={handleRemoveTodoAnimation}
                   onRemoveTodo={handleRemoveTodo}
+                  isDisable = {disable}
+                  onDisable = {handleDisableButtons}
                 />
             );
           })
