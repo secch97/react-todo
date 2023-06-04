@@ -65,71 +65,9 @@ form {
     width: 100%;
 }
 
-form label{
-    /* Display */
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-}
-
-form label span{
-    /* Display */
-    display: none;
-}
-
 input, 
 button {
     all:unset;
-}
-
-label{
-    /* Color */
-    color: white;
-    /* Font */
-    font-weight: 500;
-    font-size: 1.2rem;
-}
-
-input{
-    /* Spacing */
-    padding: 10px 15px;
-    border: 3px solid #16213E;
-    border-radius: 5px;
-    /* Sizing */
-    width: 85%;
-    min-width: 85%;
-    /* Color */
-    color: black;
-    background-color: white;
-    /* Font */
-    font-size: 1.2rem;
-    font-weight: 500;
-    /* Animation */
-    transition: ease-in-out 0.5s;
-}
-
-input:focus{
-    /* Spacing */
-    border: 3px solid #E94550;
-    /* Animation */
-    transition: ease-in-out 0.5s;
-}
-
-input:active{
-    /* Spacing */
-    border: 3px solid #E94550;
-    /* Animation */
-    transition: ease-in-out 0.5s;
-}
-
-input:disabled,
-input:disabled:active
-{
-    /* Color */
-    background-color: lightgrey;
-    border-color: grey;
-    transform: scale(1);
-    color: black
 }
 
 button {
@@ -398,17 +336,5 @@ footer{
     form{
         /* Display */
         flex-direction: column;
-    }
-
-    form label{
-        /* Display */
-        justify-content: flex;
-        /* Sizing */
-        width: 85%;
-    }
-
-    form label span{
-        /* Display */
-        display: flex;
     }
 }

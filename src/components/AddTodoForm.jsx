@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 // Third party libraries:
 import PropTypes from 'prop-types';
-import InputWithLabel from "./InputWithLabel"
+import InputWithLabel from "./InputWithLabel/InputWithLabel"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const AddTodoForm = ({onAddTodo, isLoading}) => {

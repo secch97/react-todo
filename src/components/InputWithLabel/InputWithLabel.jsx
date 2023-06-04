@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
+//CSS
+import styles from "./InputWithLabel.module.css";
 
 const InputWithLabel = ({children, inputId, inputType="text", inputPlaceholder, inputValue, inputName, inputOnChange, isLoading}) => {
   /*
@@ -21,10 +23,11 @@ const InputWithLabel = ({children, inputId, inputType="text", inputPlaceholder, 
   
   return (
     <>
-      <label htmlFor={inputId}>
+      <label className={styles.todoInputLabel} htmlFor={inputId}>
         {children}
       </label>
       <input
+        className={styles.todoInput}
         ref={inputRef}
         id={inputId}
         type={inputType}

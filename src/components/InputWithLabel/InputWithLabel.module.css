@@ -1,0 +1,75 @@
+.todoInput{
+    /* Spacing */
+    padding: 10px 15px;
+    border: 3px solid #16213E;
+    border-radius: 5px;
+    /* Sizing */
+    width: 85%;
+    min-width: 85%;
+    /* Color */
+    color: black;
+    background-color: white;
+    /* Font */
+    font-size: 1.2rem;
+    font-weight: 500;
+    /* Animation */
+    transition: ease-in-out 0.5s;
+}
+
+.todoInput:focus{
+    /* Spacing */
+    border: 3px solid #E94550;
+    /* Animation */
+    transition: ease-in-out 0.5s;
+}
+
+.todoInput:active{
+    /* Spacing */
+    border: 3px solid #E94550;
+    /* Animation */
+    transition: ease-in-out 0.5s;
+}
+
+.todoInput:disabled,
+.todoInput:disabled:active
+{
+    /* Color */
+    background-color: lightgrey;
+    border-color: grey;
+    transform: scale(1);
+    color: black
+}
+
+.todoInputLabel{
+    /* Display */
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.todoInputLabel span{
+    /* Display */
+    display: none;
+}
+
+.todoInputLabel{
+    /* Color */
+    color: white;
+    /* Font */
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 1024px){
+    .todoInputLabel{
+        /* Display */
+        justify-content: flex;
+        /* Sizing */
+        width: 85%;
+    }
+
+    .todoInputLabel span{
+        /* Display */
+        display: flex;
+    }
+}
