@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react';
 // Components
 import TodoList from './components/TodoList/TodoList';
-import NavigationBar from './components/NavigationBar';
+import NavigationBar from './components/NavigationBar/NavigationBar';
 import Footer from './components/Footer/Footer';
 // Helpers
 import { scrollToTop } from './helpers/scrollToTop';

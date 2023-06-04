@@ -157,78 +157,6 @@ footer{
     min-height: 100vh;
 }
 
-.nav-bar-container{
-    /* Display */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex: 1 1 auto;
-    /* Sizing */
-    width: 100%;
-    min-width: 100%;
-
-}
-
-.nav-bar{
-    /* Overflow */
-    overflow: hidden;
-    /* Position */
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    z-index: 1;
-    /* Display */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex: auto;
-    /* Spacing */
-    padding: 10px;
-    margin-top: 0px;
-    /* Sizing */
-    width: 100%;
-    min-width: 100%;
-    height: auto;
-    /* Colors */
-    background-color: #16213E;
-}
-
-.nav-bar-logo-container{
-    /* Display */
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    /* Spacing */
-    padding-bottom: 5px;
-    /* Sizing */
-    width: 80%;
-    min-width: 80%;
-}
-
-.nav-bar-logo-link,
-.nav-bar-logo{
-    /* Display */
-    flex: 0 1 auto;
-    /*Sizing*/
-    width: 300px;
-    min-width: 300px;
-    height: auto;
-}
-
-.nav-bar-user-controls-container{
-    /* Display */
-    display: flex;
-    flex-direction: row;
-    /* Sizing */
-    width: 80%;
-    min-width: 80%;
-}
-
-
-
 .brand{
     /* Sizing */
     width: 25px;
@@ -274,14 +202,6 @@ footer{
     /* Animation */
     transform: scale(0.95);
     transition: 0.3s ease-in-out
-}
-
-@media (max-width: 1240px){
-    .nav-bar-logo-container{
-        /* Display */
-        justify-content: center;
-        align-items: center;
-    }
 }
 
 @media (max-width: 1024px){

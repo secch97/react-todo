@@ -1,0 +1,77 @@
+.navBarContainer{
+    /* Display */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 auto;
+    /* Sizing */
+    width: 100%;
+    min-width: 100%;
+
+}
+
+.navBar{
+    /* Overflow */
+    overflow: hidden;
+    /* Position */
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    /* Display */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: auto;
+    /* Spacing */
+    padding: 10px;
+    margin-top: 0px;
+    /* Sizing */
+    width: 100%;
+    min-width: 100%;
+    height: auto;
+    /* Colors */
+    background-color: #16213E;
+}
+
+.navBarLogoContainer{
+    /* Display */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    /* Spacing */
+    padding-bottom: 5px;
+    /* Sizing */
+    width: 80%;
+    min-width: 80%;
+}
+
+.navBarLogoLink,
+.navBarLogo{
+    /* Display */
+    flex: 0 1 auto;
+    /*Sizing*/
+    width: 300px;
+    min-width: 300px;
+    height: auto;
+}
+
+.navBarUserControlsContainer{
+    /* Display */
+    display: flex;
+    flex-direction: row;
+    /* Sizing */
+    width: 80%;
+    min-width: 80%;
+}
+
+@media (max-width: 1240px){
+    .navBarLogoContainer{
+        /* Display */
+        justify-content: center;
+        align-items: center;
+    }
+}
