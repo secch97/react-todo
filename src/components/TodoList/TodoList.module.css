@@ -1,0 +1,30 @@
+.todoListContainer{
+    /* Display */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Sizing */
+    width: 100%;
+    min-width: 100%;
+    height: auto;
+}
+
+.todoList{
+    /* Overflow */
+    overflow-y: hidden;
+    overflow-x: hidden;
+    /* List styling */
+    list-style-type: none;
+    /* Display */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    /* Spacing */
+    padding: 10px;
+    margin: 10px;
+    /* Sizing */
+    width: 80%;
+    min-width: 80%;
+}

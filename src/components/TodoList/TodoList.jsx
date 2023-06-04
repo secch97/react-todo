@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 // Components
-import TodoListItem from './TodoListItem/TodoListItem';
+import TodoListItem from '../TodoListItem/TodoListItem';
+// CSS
+import styles from "./TodoList.module.css"
 // Third party libraries:
 import PropTypes from 'prop-types';
 
@@ -29,13 +31,12 @@ const TodoList = ({todoList, onRemoveTodo}) => {
   };
 
   const handleDisableButtons = (status) => {
-    console.log("I will disable other buttons " + status)
     setDisable(status);
   };
 
   return (
-    <div className='todo-list-container'>
-      <ul className='todo-list'>
+    <div className={styles.todoListContainer}>
+      <ul className={styles.todoList}>
         {
           todoList.map((toDo) => {
             return (

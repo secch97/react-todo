@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react';
 // Components
-import TodoList from './components/TodoList';
+import TodoList from './components/TodoList/TodoList';
 import NavigationBar from './components/NavigationBar';
 import Footer from './components/Footer';
 // Helpers
