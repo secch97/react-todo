@@ -132,8 +132,6 @@ button:disabled:hover
     font-weight: 500;
 }
 
-
-
 footer{
     /* Display */
     display: flex;
@@ -229,35 +227,7 @@ footer{
     min-width: 80%;
 }
 
-.footer-nav-container {
-    /* Display */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* Spacing */
-    padding: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.251);
-    /* Sizing */
-    width: 100%;
-    min-width: 100%;
-}
 
-.footer-nav {
-    /* Display */
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
-    /* Sizing */
-    width: 100%;
-}
-
-.footer-item{
-    /* Color */
-    color:white;
-}
 
 .brand{
     /* Sizing */
