@@ -53,18 +53,6 @@ main {
     height: 100%;
 }
 
-form {
-    /* Display */
-    display: flex;
-    flex-direction: row;
-    flex: 1 1 auto;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    /* Sizing */
-    width: 100%;
-}
-
 input, 
 button {
     all:unset;
@@ -332,9 +320,5 @@ footer{
         min-height: 245px;
         /* Animation */
         transition: 0.3s ease-in-out;
-    }
-    form{
-        /* Display */
-        flex-direction: column;
     }
 }

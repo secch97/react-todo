@@ -1,6 +1,6 @@
 import React from 'react';
 // Components
-import AddTodoForm from './AddTodoForm';
+import AddTodoForm from './AddTodoForm/AddTodoForm';
 // Third party libraries:
 import PropTypes from 'prop-types';
 
