@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+// CSS Modules
+import styles from "./TodoListItem.module.css";
 // Third party libraries:
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -49,13 +51,13 @@ const TodoListItem = ({id, title, isRemoved, onRemoveTodoAnimation, onRemoveTodo
 
   return (
     <li 
-      className={isAnimating ? 'animate__animated animate__backOutRight animate__faster' : "animate__animated animate__fadeIn animate__faster"}
+      className={isAnimating ? `${styles.listItem} animate__animated animate__backOutRight animate__faster` : `${styles.listItem} animate__animated animate__fadeIn animate__faster`}
       onAnimationEnd={handleAnimationEnd}
       >
       <span>{title}</span>
       {/*B: Add onClick event to trigger handleRemoveTodo*/}
       <button 
-        className='button-icon'
+        className={styles.buttonIcon}
         onClick={handleRemoveTodo}
         disabled={!isDisable? false: true}
       >

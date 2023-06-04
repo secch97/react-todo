@@ -206,36 +206,7 @@ button:disabled:hover
     font-weight: 500;
 }
 
-.button-icon{
-    /* Spacing */
-    padding: 5px 10px;
-    border: 3px solid #E94550;
-    border-radius: 5px;
-    /* Color */
-    background-color: #E94550;
-    color: white;
-    /* Font */
-    font-weight: 500;
-    font-size: 1.2rem;
-    /* Animation */
-    transition: ease-in-out 0.15s;
-}
 
-.button-icon:disabled,
-.button-icon:disabled:hover,
-.button-icon:disabled:hover *{
-    /* Color */
-    background-color: grey;
-    color: white;
-}
-
-
-.button-icon:focus{
-    /* Spacing */
-    border-color: white;
-    /* Animation */
-    transition: ease-in-out 0.3s;    
-}
 
 footer{
     /* Display */
@@ -363,45 +334,7 @@ footer{
     min-width: 80%;
 }
 
-.todo-list li{
-    /* Display */
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    /* Spacing */
-    padding: 10px;
-    border: 3px solid #16213E;
-    border-radius: 5px;
-    box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.251);
-    /* Sizing */
-    width: 100%;
-    min-width: 100%;
-    /* Font */
-    font-weight: 500;
-    font-size: 1.2rem;
-    /* Color */
-    color: white;
-    background-color: #0F3460;
-    /* Animation */
-    transition: 0.2s ease-in-out;
-}
 
-.todo-list li span{
-    display: flex;
-    justify-content: center;
-    /*Text decoration*/
-    text-align: justify;
-
-}
-
-.todo-list li:hover{
-    /* Spacing */
-    box-shadow: 8px 8px 0px rgba(233, 69, 96, 0.251);
-    /* Animation */
-    transition: 0.2s ease-in-out;
-}
 
 .footer-nav-container {
     /* Display */
@@ -510,17 +443,5 @@ footer{
     form label span{
         /* Display */
         display: flex;
-    }
-}
-
-@media (max-width: 768px){
-    .todo-list li{
-        /*Display*/
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .todo-list li span{
-        justify-content: center;
     }
 }

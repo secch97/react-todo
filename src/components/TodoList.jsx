@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 // Components
-import TodoListItem from './TodoListItem';
+import TodoListItem from './TodoListItem/TodoListItem';
 // Third party libraries:
 import PropTypes from 'prop-types';
 
