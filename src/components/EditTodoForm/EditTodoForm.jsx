@@ -61,6 +61,7 @@ const EditTodoForm = ({modalData, onEditTodoModal, onEditTodo}) => {
         if(!todo.title.trim()){
             return;
         }
+        setAnimation(false);
         onEditTodo({
             id: todo.id,
             title: todo.title.trim()
