@@ -3,20 +3,21 @@ import PropTypes from "prop-types";
 //CSS
 import styles from "./InputWithLabel.module.css";
 
-const InputWithLabel = ({children, inputId, inputType="text", inputPlaceholder, inputValue, inputName, inputOnChange, isLoading}) => {
+const InputWithLabel = ({children, inputId, inputType="text", inputPlaceholder, inputValue, inputName, inputOnChange, isLoading, isFocused}) => {
   /*
     ============================
     =          HOOKS           =
     ============================
   */
   const inputRef = useRef();
-
+  console.log(inputValue,isFocused);
   /*
     Won't provide dependency array in order 
     to give this side effect on mount and update
    */
   useEffect(() => {
-    if (inputRef.current){
+    if (inputRef.current && isFocused){
+      inputRef.current.blur();
       inputRef.current.focus();
     }
   });

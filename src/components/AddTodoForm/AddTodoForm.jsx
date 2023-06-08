@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from "./AddTodoForm.module.css"
 
 
-const AddTodoForm = ({onAddTodo, isLoading}) => {
+const AddTodoForm = ({onAddTodo, isLoading, inputIsFocused}) => {
   /*
     ============================
     =          STATES          =
@@ -52,6 +52,7 @@ const AddTodoForm = ({onAddTodo, isLoading}) => {
         inputName = "title"
         inputOnChange={handleTitleChange}
         isLoading={isLoading}
+        isFocused={inputIsFocused}
       >
         <FontAwesomeIcon 
           icon={["fas", "calendar-plus"]} 

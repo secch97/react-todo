@@ -6,7 +6,7 @@ import styles from "./TodoList.module.css"
 // Third party libraries:
 import PropTypes from 'prop-types';
 
-const TodoList = ({todoList, onRemoveTodo}) => {
+const TodoList = ({todoList, onRemoveTodo, onEditTodoModal}) => {
   /*
     ==================================
     =             HOOKS              =
@@ -49,6 +49,7 @@ const TodoList = ({todoList, onRemoveTodo}) => {
                   isRemoved={removedIds.includes(toDo.id)}
                   onRemoveTodoAnimation={handleRemoveTodoAnimation}
                   onRemoveTodo={handleRemoveTodo}
+                  onEditTodoModal={onEditTodoModal}
                   isDisable = {disable}
                   onDisable = {handleDisableButtons}
                 />

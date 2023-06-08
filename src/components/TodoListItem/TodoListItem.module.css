@@ -37,7 +37,24 @@
     transition: 0.2s ease-in-out;
 }
 
-.buttonIcon{
+.todoItemControlsContainer{
+    /* Display */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.todoItemControls{
+    /* Display */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.removeButtonIcon{
     /* Spacing */
     padding: 5px 10px;
     border: 3px solid #E94550;
@@ -52,16 +69,54 @@
     transition: ease-in-out 0.15s;
 }
 
-.buttonIcon:disabled,
-.buttonIcon:disabled:hover,
-.buttonIcon:disabled:hover *{
+.editButtonIcon{
+      /* Spacing */
+      padding: 5px 10px;
+      border: 3px solid #E7B10A;
+      border-radius: 5px;
+      /* Color */
+      background-color: #E7B10A;
+      color: white;
+      /* Font */
+      font-weight: 500;
+      font-size: 1.2rem;
+      /* Animation */
+      transition: ease-in-out 0.15s; 
+}
+
+.removeButtonIcon:disabled,
+.removeButtonIcon:disabled:hover,
+.removeButtonIcon:disabled:hover *{
     /* Color */
     background-color: grey;
     color: white;
 }
 
 
-.buttonIcon:focus{
+.removeButtonIcon:focus{
+    /* Spacing */
+    border-color: white;
+    /* Animation */
+    transition: ease-in-out 0.3s;    
+}
+
+.editButtonIcon:disabled,
+.editButtonIcon:disabled:hover,
+.editButtonIcon:disabled:hover *{
+    /* Color */
+    background-color: grey;
+    color: white;
+}
+
+.editButtonIcon:hover,
+.editButtonIcon:hover *{
+    /* Spacing */
+    border-color: #E7B10A;
+    /* Color */
+    background-color: #E7B10A;
+}
+
+.editButtonIcon:focus{
     /* Spacing */
     border-color: white;
     /* Animation */

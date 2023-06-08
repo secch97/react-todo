@@ -5,7 +5,7 @@ import styles from "./TodoListItem.module.css";
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const TodoListItem = ({id, title, isRemoved, onRemoveTodoAnimation, onRemoveTodo, isDisable, onDisable}) => {
+const TodoListItem = ({id, title, isRemoved, onRemoveTodoAnimation, onRemoveTodo, onEditTodoModal, isDisable, onDisable}) => {
   console.log()
   /*
     ==================================
@@ -49,20 +49,47 @@ const TodoListItem = ({id, title, isRemoved, onRemoveTodoAnimation, onRemoveTodo
     setIsAnimating(false);
   };
 
+  const handleEditTodoModal = () => {
+    onEditTodoModal({
+      modalStatus: true,
+      todo: {
+        id: id,
+        title: title
+      }
+    });
+  }
+
   return (
     <li 
       className={isAnimating ? `${styles.listItem} animate__animated animate__backOutRight animate__faster` : `${styles.listItem} animate__animated animate__fadeIn animate__faster`}
       onAnimationEnd={handleAnimationEnd}
-      >
+    >
       <span>{title}</span>
       {/*B: Add onClick event to trigger handleRemoveTodo*/}
-      <button 
-        className={styles.buttonIcon}
-        onClick={handleRemoveTodo}
-        disabled={!isDisable? false: true}
+      <div
+        className={styles.todoItemControlsContainer}
       >
-        <FontAwesomeIcon icon={["fas", "trash-can"]} size="sm"/>
-      </button>
+        <div
+          className={styles.todoItemControls}
+        >
+          <button 
+            className={styles.removeButtonIcon}
+            onClick={handleRemoveTodo}
+            disabled={isDisable}
+          >
+            <FontAwesomeIcon icon={["fas", "trash-can"]} size="sm"/>
+          </button>
+          <button
+            className={styles.editButtonIcon}
+            onClick={handleEditTodoModal}
+            disabled={isDisable}
+            type='button'
+          >
+            <FontAwesomeIcon icon={["fas", "pen-to-square"]} size="sm"/>
+          </button>
+        </div>  
+      </div>
+      
     </li>
   );
 };
