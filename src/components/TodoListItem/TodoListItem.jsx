@@ -50,7 +50,6 @@ const TodoListItem = ({id, title, isRemoved, onRemoveTodoAnimation, onRemoveTodo
   };
 
   const handleEditTodoModal = () => {
-    document.activeElement.blur();
     onEditTodoModal({
       modalStatus: true,
       todo: {
