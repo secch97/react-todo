@@ -5,7 +5,7 @@ import styles from "./TodoListItem.module.css";
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const TodoListItem = ({id, title, isRemoved, onRemoveTodoAnimation, onRemoveTodo, isDisable, onDisable}) => {
+const TodoListItem = ({id, title, isRemoved, onRemoveTodoAnimation, onRemoveTodo, onEditTodoModal, isDisable, onDisable}) => {
   console.log()
   /*
     ==================================
@@ -49,6 +49,16 @@ const TodoListItem = ({id, title, isRemoved, onRemoveTodoAnimation, onRemoveTodo
     setIsAnimating(false);
   };
 
+  const handleEditTodoModal = () => {
+    onEditTodoModal({
+      modalStatus: true,
+      todo: {
+        id: id,
+        title: title
+      }
+    });
+  }
+
   return (
     <li 
       className={isAnimating ? `${styles.listItem} animate__animated animate__backOutRight animate__faster` : `${styles.listItem} animate__animated animate__fadeIn animate__faster`}
@@ -71,6 +81,7 @@ const TodoListItem = ({id, title, isRemoved, onRemoveTodoAnimation, onRemoveTodo
           </button>
           <button
             className={styles.editButtonIcon}
+            onClick={handleEditTodoModal}
             disabled={isDisable}
           >
             <FontAwesomeIcon icon={["fas", "pen-to-square"]} size="sm"/>

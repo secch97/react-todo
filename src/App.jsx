@@ -8,6 +8,7 @@ import { scrollToTop } from './helpers/scrollToTop';
 // Third party libraries
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import EditTodoForm from './components/EditTodoForm/EditTodoForm';
 
 const App = () => {
   /*
@@ -17,6 +18,10 @@ const App = () => {
   */
   const [todoList, setTodoList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [modalData, setModalData] = useState({
+    modalStatus: false, 
+    todo: {}
+  });
 
   /* Async function */
   const fetchData = async () => {
@@ -39,7 +44,6 @@ const App = () => {
           id:todo.id
         };
       });
-      console.log(todos);
       setTodoList(todos);
       setIsLoading(false);
     }catch(error){
@@ -124,6 +128,10 @@ const App = () => {
     }
   };
 
+  const handleEditTodoModal = (modalData) => {
+    setModalData({modalStatus: modalData.modalStatus, todo:modalData.todo});
+  }
+
   const handleRemoveTodo = async (id) => {
     const deletedTodo = await deleteData(id);
     if(deletedTodo.deleted){
@@ -156,7 +164,12 @@ const App = () => {
                       </div>
                     ) 
                     : 
-                    (<TodoList todoList={todoList} onRemoveTodo={handleRemoveTodo}/>)
+                    (
+                      <>
+                        <TodoList todoList={todoList} onRemoveTodo={handleRemoveTodo} onEditTodoModal={handleEditTodoModal}/>
+                        <EditTodoForm modalData={modalData} onEditTodoModal={handleEditTodoModal}></EditTodoForm>
+                      </>
+                    )
                   }
                   
                 </main>

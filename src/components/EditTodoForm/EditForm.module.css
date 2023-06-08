@@ -1,0 +1,131 @@
+.modalContainer{
+    /* Visibility */
+    visibility:hidden;
+    opacity: 0;
+    /* Display */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Position */
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    /* Spacing */
+    padding: 0px;
+    margin: 0px;
+    /* Sizing */
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    /* Colors */
+    background-color: rgba(0,0,0,0.3);
+    /* Transition */
+    transition: visibility 0.3s ease, opacity 0.3s ease;
+}
+
+.modal{
+    /* Display */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Overflow */
+    overflow: auto;
+    /* Sizing */
+    max-width: 40%;
+    width: 100%;
+    height: auto;
+    /* Spacing */
+    padding: 30px 50px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    /* Colors */
+    background-color: #16213E;
+}
+
+.editFormContainer{
+    /* Sizing */
+    width: 100%;
+}
+
+.editForm{
+    /* Display */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Sizing */
+    width: 100%;
+    max-width: 100%;
+}
+
+.editFormControls{
+    /* Display */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.closeEditFormButton{
+    /* Spacing */
+    padding: 5px 10px;
+    border: 3px solid white;
+    border-radius: 5px;
+    /* Font */
+    font-weight: 500;
+    font-size: 1.2rem;
+    /* Animation */ 
+    transition: ease-in-out 0.15s;
+}
+
+.editFormButton{
+    /* Spacing */
+    padding: 5px 10px;
+    border: 3px solid #E7B10A;
+    border-radius: 5px;
+    /* Color */
+    background-color: #E7B10A;
+    color: white;
+    /* Font */
+    font-weight: 500;
+    font-size: 1.2rem;
+    /* Animation */
+    transition: ease-in-out 0.15s; 
+}
+
+.editFormButton:hover,
+.editFormButton:hover *{
+    /* Spacing */
+    border-color: #E7B10A;
+    /* Color */
+    background-color: #E7B10A;
+}
+
+.editFormButton:focus{
+    /* Spacing */
+    border-color: white;
+    /* Animation */
+    transition: ease-in-out 0.3s;    
+}
+
+.editFormControl{
+    /* Display */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    /* Sizing */
+    width: 100%;
+}
+
+.editFormHeading{
+    /* Spacing */
+    margin-top: 2px;
+    margin-bottom: 0px;
+    /* Colors */
+    color: white;
+}

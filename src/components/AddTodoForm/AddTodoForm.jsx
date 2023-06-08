@@ -52,6 +52,7 @@ const AddTodoForm = ({onAddTodo, isLoading}) => {
         inputName = "title"
         inputOnChange={handleTitleChange}
         isLoading={isLoading}
+        isFocused={true}
       >
         <FontAwesomeIcon 
           icon={["fas", "calendar-plus"]} 
