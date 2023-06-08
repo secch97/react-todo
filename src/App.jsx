@@ -11,6 +11,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import EditTodoForm from './components/EditTodoForm/EditTodoForm';
 
 const App = () => {
+  console.log("ACTIVE ELEMENT", document.activeElement)
   /*
     ============================
     =           HOOKS          =
@@ -23,7 +24,11 @@ const App = () => {
     todo: {}
   });
 
-  /* Async function */
+  /*
+    ============================
+    =     ASYNC FUNCTIONS      =
+    ============================
+  */
   const fetchData = async () => {
     const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${process.env.REACT_APP_TABLE_NAME}?sort%5B0%5D%5Bfield%5D=createdAt&sort%5B0%5D%5Bdirection%5D=asc`;
     const options = {
@@ -84,6 +89,37 @@ const App = () => {
     }
   };
 
+  const updateData = async({id, title}) =>{
+    const airtableData = {
+      fields: {
+        title: title,
+      }
+    };
+    const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${process.env.REACT_APP_TABLE_NAME}/${id}\\`;
+    const options = {
+      method: "PATCH",
+      headers: {
+        Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_KEY}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(airtableData)
+    };
+    try{
+      const response = await fetch(url, options);
+      if(!response.ok){
+        throw new Error(`${response.status}`);
+      }
+      const data = await response.json();
+      const updatedTodo = {
+        title: data.fields.title,
+        id: data.id
+      }
+      return updatedTodo;
+    } catch(error){
+      console.log(`Error: ${error}`);
+    }
+  };
+
   const deleteData = async(id) => {
     const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${process.env.REACT_APP_TABLE_NAME}/${id}\\`;
     const options = {
@@ -132,6 +168,24 @@ const App = () => {
     setModalData({modalStatus: modalData.modalStatus, todo:modalData.todo});
   }
 
+  const handleEditTodo = async (todo) => {
+    const updatedTodo = await updateData(todo);
+    if (typeof updatedTodo === "object"){
+      setTodoList(todoList.map((todo) => {
+        if (todo.id === updatedTodo.id){
+          return ({id: todo.id, title: updatedTodo.title});
+        }
+        else{
+          return todo;
+        }
+      }))
+    }
+    setModalData({
+      modalStatus: false,
+      todo: todo
+    });
+  };
+
   const handleRemoveTodo = async (id) => {
     const deletedTodo = await deleteData(id);
     if(deletedTodo.deleted){
@@ -153,7 +207,7 @@ const App = () => {
             element={(
               <>
                 <header>
-                  <NavigationBar onAddTodo={handleAddTodo} isLoading={isLoading}/>
+                  <NavigationBar onAddTodo={handleAddTodo} isLoading={isLoading} inputIsFocused={!modalData.modalStatus}/>
                 </header>
                 <main>
                   {
@@ -167,7 +221,7 @@ const App = () => {
                     (
                       <>
                         <TodoList todoList={todoList} onRemoveTodo={handleRemoveTodo} onEditTodoModal={handleEditTodoModal}/>
-                        <EditTodoForm modalData={modalData} onEditTodoModal={handleEditTodoModal}></EditTodoForm>
+                        <EditTodoForm modalData={modalData} onEditTodoModal={handleEditTodoModal} onEditTodo={handleEditTodo}/>
                       </>
                     )
                   }

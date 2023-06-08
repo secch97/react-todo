@@ -1,9 +1,6 @@
 .modalContainer{
-    /* Visibility */
-    visibility:hidden;
-    opacity: 0;
     /* Display */
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     /* Position */
@@ -19,10 +16,6 @@
     max-width: 100%;
     width: 100%;
     height: 100%;
-    /* Colors */
-    background-color: rgba(0,0,0,0.3);
-    /* Transition */
-    transition: visibility 0.3s ease, opacity 0.3s ease;
 }
 
 .modal{

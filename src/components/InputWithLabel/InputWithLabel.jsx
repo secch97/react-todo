@@ -10,13 +10,14 @@ const InputWithLabel = ({children, inputId, inputType="text", inputPlaceholder, 
     ============================
   */
   const inputRef = useRef();
-
+  console.log(inputValue,isFocused);
   /*
     Won't provide dependency array in order 
     to give this side effect on mount and update
    */
   useEffect(() => {
     if (inputRef.current && isFocused){
+      inputRef.current.blur();
       inputRef.current.focus();
     }
   });

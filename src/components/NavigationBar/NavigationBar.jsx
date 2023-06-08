@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 //CSS
 import styles from "./NavigationBar.module.css"
 
-const NavigationBar = ({onAddTodo, isLoading}) => {
+const NavigationBar = ({onAddTodo, isLoading, inputIsFocused}) => {
   return (
     <div className={styles.navBarContainer}>
       <nav className={styles.navBar}>
@@ -16,7 +16,7 @@ const NavigationBar = ({onAddTodo, isLoading}) => {
           </a>
         </div>
         <div className={styles.navBarUserControlsContainer}>
-          <AddTodoForm onAddTodo={onAddTodo} isLoading={isLoading}/>
+          <AddTodoForm onAddTodo={onAddTodo} isLoading={isLoading} inputIsFocused={inputIsFocused}/>
         </div>
       </nav>
     </div>

@@ -50,6 +50,7 @@ const TodoListItem = ({id, title, isRemoved, onRemoveTodoAnimation, onRemoveTodo
   };
 
   const handleEditTodoModal = () => {
+    document.activeElement.blur();
     onEditTodoModal({
       modalStatus: true,
       todo: {
@@ -83,6 +84,7 @@ const TodoListItem = ({id, title, isRemoved, onRemoveTodoAnimation, onRemoveTodo
             className={styles.editButtonIcon}
             onClick={handleEditTodoModal}
             disabled={isDisable}
+            type='button'
           >
             <FontAwesomeIcon icon={["fas", "pen-to-square"]} size="sm"/>
           </button>
