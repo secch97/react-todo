@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 // CSS Modules
 import styles from "./TodoListItem.module.css";
 // Third party libraries:
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const TodoListItem = ({id, title, isRemoved, onRemoveTodoAnimation, onRemoveTodo, onEditTodoModal, isDisable, onDisable}) => {
+const TodoListItem = ({id, title, isRemoved, listFetched, onRemoveTodoAnimation, onRemoveTodo, onEditTodoModal, isDisable, onDisable}) => {
   console.log()
   /*
     ==================================
@@ -15,34 +15,17 @@ const TodoListItem = ({id, title, isRemoved, onRemoveTodoAnimation, onRemoveTodo
   /* States */
   //A: Set animation to false
   const [isAnimating, setIsAnimating] = useState(false);
-
-  /* Effects */
-  /*G: isRemoved has changed! This will trigger a side effect: we continue the 
-  animation and set the ref classname of the current <li> to the fadeOut class
-  and we call the onRemoveTodo handler to remove from the toDoList state the current 
-  list item
-  */
-  useEffect(()=>{
-    if(isRemoved){
-      onRemoveTodo(id);
-    }
-  }, [isRemoved]);
-
+  
   /*
     ==================================
     =            HANDLERS            =
     ==================================
   */
   const handleRemoveTodo = () => {
-    //C: Set animation status to true to re render listItem. After 0.5s, call onRemoveTodoAnimation passing the id of the <li> we want to animate
     setIsAnimating(true);
+    onRemoveTodoAnimation(id);
     onDisable(true);
-    setTimeout(() => {
-      onRemoveTodoAnimation(id);
-      setTimeout(() => {
-        onDisable(false);
-      }, 400)
-    }, 200);
+    onRemoveTodo(id);
   }
 
   const handleAnimationEnd = () => {

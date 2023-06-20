@@ -53,7 +53,7 @@ const EditTodoForm = ({modalData, onEditTodoModal, onEditTodo}) => {
                 modalStatus: false,
                 todo: todo
             });
-        }, 500)
+        }, 500);
     }
 
     const handleEditTodoFormSubmit = (event) => {

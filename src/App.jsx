@@ -19,6 +19,7 @@ const App = () => {
   */
   const [todoList, setTodoList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [listFetched, setListFetched] = useState(false);
   const [modalData, setModalData] = useState({
     modalStatus: false, 
     todo: {}
@@ -187,15 +188,22 @@ const App = () => {
   };
 
   const handleRemoveTodo = async (id) => {
+    setListFetched(true);
     const deletedTodo = await deleteData(id);
     if(deletedTodo.deleted){
       const newTodoList = todoList.filter((toDo) => toDo.id !== id);
       setTodoList(newTodoList);
+      setListFetched(false);
     }
     else{
       return;
     }
+  };
+
+  const handleListFetched = (status) => {
+    setListFetched(false);
   }
+
 
   return (
       /* Fragment creation */
@@ -220,7 +228,7 @@ const App = () => {
                     : 
                     (
                       <>
-                        <TodoList todoList={todoList} onRemoveTodo={handleRemoveTodo} onEditTodoModal={handleEditTodoModal}/>
+                        <TodoList todoList={todoList} listFetched={listFetched} onListFetched={handleListFetched} onRemoveTodo={handleRemoveTodo} onEditTodoModal={handleEditTodoModal}/>
                         <EditTodoForm modalData={modalData} onEditTodoModal={handleEditTodoModal} onEditTodo={handleEditTodo}/>
                       </>
                     )
