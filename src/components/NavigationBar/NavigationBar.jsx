@@ -33,6 +33,8 @@ export {
   ============================
 */
 NavigationBar.propTypes = {
-    onAddTodo: PropTypes.func.isRequired
+    onAddTodo: PropTypes.func.isRequired,
+    isLoading: PropTypes.bool.isRequired,
+    inputIsFocused: PropTypes.bool.isRequired
 };
   

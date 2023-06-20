@@ -12,7 +12,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import EditTodoForm from './components/EditTodoForm/EditTodoForm';
 
 const App = () => {
-  console.log("ACTIVE ELEMENT", document.activeElement)
   /*
     ============================
     =           HOOKS          =
@@ -201,11 +200,6 @@ const App = () => {
     }
   };
 
-  const handleListFetched = (status) => {
-    setListFetched(false);
-  }
-
-
   return (
       /* Fragment creation */
       <BrowserRouter>
@@ -230,7 +224,7 @@ const App = () => {
                     (
                       <>
                         <TodoContainer>
-                          <TodoList todoList={todoList} listFetched={listFetched} onListFetched={handleListFetched} onRemoveTodo={handleRemoveTodo} onEditTodoModal={handleEditTodoModal}/>
+                          <TodoList todoList={todoList} listFetched={listFetched} onRemoveTodo={handleRemoveTodo} onEditTodoModal={handleEditTodoModal}/>
                         </TodoContainer>
                         <EditTodoForm modalData={modalData} onEditTodoModal={handleEditTodoModal} onEditTodo={handleEditTodo}/>
                       </>

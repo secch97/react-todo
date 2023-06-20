@@ -1,5 +1,7 @@
+import PropTypes from "prop-types"
 import React from "react";
 import styles from "./TodoContainer.module.css";
+
 
 const TodoContainer = ({children}) => {
     return(
@@ -7,6 +9,10 @@ const TodoContainer = ({children}) => {
             {children}
         </div>
     );
+};
+
+TodoContainer.propTypes = {
+    children: PropTypes.object.isRequired
 };
 
 export {

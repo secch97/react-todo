@@ -9,30 +9,14 @@ import PropTypes from 'prop-types';
 const TodoList = ({todoList, listFetched, onRemoveTodo, onEditTodoModal}) => {
   /*
     ==================================
-    =             HOOKS              =
-    ==================================
-  */
-  //D: Store as a state the IDs we want to remove.
-  const [removedIds, setRemovedIds] = useState([]);
-  const [disable, setDisable] = useState(false);
-
-  /*
-    ==================================
     =            HANDLERS            =
     ==================================
   */
- //E: Once this function is called, we want to add the id that need to be removed to the removedIds state to trigger a re render of the list.
-  const handleRemoveTodoAnimation = (id) => {
-    setRemovedIds((prevIds) => [...prevIds, id]);
-  };
 
   const handleRemoveTodo = (id) => {
     onRemoveTodo(id);
   };
 
-  const handleDisableButtons = (status) => {
-    setDisable(status);
-  };
 
   return (
       <ul className={styles.todoList}>
@@ -45,13 +29,9 @@ const TodoList = ({todoList, listFetched, onRemoveTodo, onEditTodoModal}) => {
                 <TodoListItem 
                   key={toDo.id} 
                   {...toDo}
-                  isRemoved={removedIds.includes(toDo.id)}
-                  listFetched={listFetched}
-                  onRemoveTodoAnimation={handleRemoveTodoAnimation}
                   onRemoveTodo={handleRemoveTodo}
                   onEditTodoModal={onEditTodoModal}
                   isDisable = {listFetched}
-                  onDisable = {handleDisableButtons}
                 />
             );
           })
@@ -70,5 +50,8 @@ export {
   ===========================
 */
 TodoList.propTypes = {
-  todoList: PropTypes.array.isRequired
-}
+  todoList: PropTypes.array.isRequired,
+  listFetched: PropTypes.bool.isRequired,
+  onRemoveTodo: PropTypes.func.isRequired,
+  onEditTodoModal: PropTypes.func.isRequired
+};

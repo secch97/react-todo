@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import PropTypes from "prop-types";
 
 import InputWithLabel from "../InputWithLabel/InputWithLabel";
 import styles from "./EditForm.module.css"
@@ -109,5 +110,11 @@ const EditTodoForm = ({modalData, onEditTodoModal, onEditTodo}) => {
         </div>
     )
 }
+
+EditTodoForm.propTypes = {
+    modalData: PropTypes.object.isRequired,
+    onEditTodoModal: PropTypes.func.isRequired,
+    onEditTodo: PropTypes.func.isRequired
+};
 
 export default EditTodoForm

@@ -5,8 +5,7 @@ import styles from "./TodoListItem.module.css";
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const TodoListItem = ({id, title, isRemoved, listFetched, onRemoveTodoAnimation, onRemoveTodo, onEditTodoModal, isDisable, onDisable}) => {
-  console.log()
+const TodoListItem = ({id, title, onRemoveTodo, onEditTodoModal, isDisable}) => {
   /*
     ==================================
     =             HOOKS              =
@@ -23,8 +22,6 @@ const TodoListItem = ({id, title, isRemoved, listFetched, onRemoveTodoAnimation,
   */
   const handleRemoveTodo = () => {
     setIsAnimating(true);
-    onRemoveTodoAnimation(id);
-    onDisable(true);
     onRemoveTodo(id);
   }
 
@@ -86,7 +83,7 @@ export {
 TodoListItem.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  isRemoved: PropTypes.bool.isRequired,
-  onRemoveTodoAnimation: PropTypes.func.isRequired,
-  onRemoveTodo: PropTypes.func.isRequired
+  onRemoveTodo: PropTypes.func.isRequired,
+  onEditTodoModal: PropTypes.func.isRequired,
+  isDisable: PropTypes.bool.isRequired
 };
