@@ -35,7 +35,6 @@ const TodoList = ({todoList, listFetched, onRemoveTodo, onEditTodoModal}) => {
   };
 
   return (
-    <div className={styles.todoListContainer}>
       <ul className={styles.todoList}>
         {
           todoList.map((toDo) => {
@@ -58,7 +57,6 @@ const TodoList = ({todoList, listFetched, onRemoveTodo, onEditTodoModal}) => {
           })
         }
       </ul>
-    </div>
   );
 };
 

@@ -1,7 +1,8 @@
 import React, { Fragment, useEffect, useState } from 'react';
 // Components
-import TodoList from './components/TodoList/TodoList';
 import NavigationBar from './components/NavigationBar/NavigationBar';
+import TodoContainer from './components/TodoContainer/TodoContainer';
+import TodoList from './components/TodoContainer/TodoList/TodoList';
 import Footer from './components/Footer/Footer';
 // Helpers
 import { scrollToTop } from './helpers/scrollToTop';
@@ -228,7 +229,9 @@ const App = () => {
                     : 
                     (
                       <>
-                        <TodoList todoList={todoList} listFetched={listFetched} onListFetched={handleListFetched} onRemoveTodo={handleRemoveTodo} onEditTodoModal={handleEditTodoModal}/>
+                        <TodoContainer>
+                          <TodoList todoList={todoList} listFetched={listFetched} onListFetched={handleListFetched} onRemoveTodo={handleRemoveTodo} onEditTodoModal={handleEditTodoModal}/>
+                        </TodoContainer>
                         <EditTodoForm modalData={modalData} onEditTodoModal={handleEditTodoModal} onEditTodo={handleEditTodo}/>
                       </>
                     )
