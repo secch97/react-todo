@@ -28,9 +28,7 @@ const TodoListItem = ({id, title, isRemoved, listFetched, onRemoveTodoAnimation,
     onRemoveTodo(id);
   }
 
-  const handleAnimationEnd = () => {
-    setIsAnimating(false);
-  };
+
 
   const handleEditTodoModal = () => {
     onEditTodoModal({
@@ -45,7 +43,6 @@ const TodoListItem = ({id, title, isRemoved, listFetched, onRemoveTodoAnimation,
   return (
     <li 
       className={isAnimating ? `${styles.listItem} animate__animated animate__backOutRight animate__faster` : `${styles.listItem} animate__animated animate__fadeIn animate__faster`}
-      onAnimationEnd={handleAnimationEnd}
     >
       <span>{title}</span>
       {/*B: Add onClick event to trigger handleRemoveTodo*/}
