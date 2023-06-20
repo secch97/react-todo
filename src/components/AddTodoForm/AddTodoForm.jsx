@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 // Third party libraries:
 import PropTypes from 'prop-types';
-import InputWithLabel from "./InputWithLabel"
+import InputWithLabel from "../InputWithLabel/InputWithLabel"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+//CSS
+import styles from "./AddTodoForm.module.css"
 
-const AddTodoForm = ({onAddTodo, isLoading}) => {
+
+const AddTodoForm = ({onAddTodo, isLoading, inputIsFocused}) => {
   /*
     ============================
     =          STATES          =
@@ -40,7 +43,7 @@ const AddTodoForm = ({onAddTodo, isLoading}) => {
   };
 
   return (
-    <form onSubmit={handleFormSubmit}>
+    <form className={styles.todoForm} onSubmit={handleFormSubmit}>
       <InputWithLabel
         inputId="todoTitle"
         inputType="text"
@@ -49,6 +52,7 @@ const AddTodoForm = ({onAddTodo, isLoading}) => {
         inputName = "title"
         inputOnChange={handleTitleChange}
         isLoading={isLoading}
+        isFocused={inputIsFocused}
       >
         <FontAwesomeIcon 
           icon={["fas", "calendar-plus"]} 

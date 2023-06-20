@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 // Components
-import TodoListItem from './TodoListItem';
+import TodoListItem from '../TodoListItem/TodoListItem';
+// CSS
+import styles from "./TodoList.module.css"
 // Third party libraries:
 import PropTypes from 'prop-types';
 
-const TodoList = ({todoList, onRemoveTodo}) => {
+const TodoList = ({todoList, listFetched, onRemoveTodo, onEditTodoModal}) => {
   /*
     ==================================
     =             HOOKS              =
@@ -29,13 +31,12 @@ const TodoList = ({todoList, onRemoveTodo}) => {
   };
 
   const handleDisableButtons = (status) => {
-    console.log("I will disable other buttons " + status)
     setDisable(status);
   };
 
   return (
-    <div className='todo-list-container'>
-      <ul className='todo-list'>
+    <div className={styles.todoListContainer}>
+      <ul className={styles.todoList}>
         {
           todoList.map((toDo) => {
             return (
@@ -46,9 +47,11 @@ const TodoList = ({todoList, onRemoveTodo}) => {
                   key={toDo.id} 
                   {...toDo}
                   isRemoved={removedIds.includes(toDo.id)}
+                  listFetched={listFetched}
                   onRemoveTodoAnimation={handleRemoveTodoAnimation}
                   onRemoveTodo={handleRemoveTodo}
-                  isDisable = {disable}
+                  onEditTodoModal={onEditTodoModal}
+                  isDisable = {listFetched}
                   onDisable = {handleDisableButtons}
                 />
             );
