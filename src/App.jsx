@@ -31,7 +31,7 @@ const App = () => {
     ============================
   */
   const fetchData = async () => {
-    const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${process.env.REACT_APP_TABLE_NAME}?sort[0][field]=title&sort[0][direction]=asc`;
+    const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${process.env.REACT_APP_TABLE_NAME}`;
     const options = {
       method:"GET",
       headers: {
@@ -50,6 +50,17 @@ const App = () => {
           id:todo.id
         };
       });
+      todos.sort((objectA, objectB)=>{
+        if(objectA.title < objectB.title){
+          return -1;
+        }
+        else if(objectA.title === objectB.title){
+          return 0;
+        }
+        else{
+          return 1;
+        }
+      })
       setTodoList(todos);
       setIsLoading(false);
     }catch(error){
