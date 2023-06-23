@@ -52,13 +52,13 @@ const App = () => {
       });
       todos.sort((objectA, objectB)=>{
         if(objectA.title < objectB.title){
-          return -1;
+          return 1;
         }
         else if(objectA.title === objectB.title){
           return 0;
         }
         else{
-          return 1;
+          return -1;
         }
       })
       setTodoList(todos);
