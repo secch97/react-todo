@@ -39,7 +39,10 @@ const TodoList = ({todoList, listFetched, onRemoveTodo, onEditTodoModal}) => {
     =             STATES             =
     ==================================
   */
-  const [sort, setSort] = useState("NONE");
+  const [sort, setSort] = useState({
+    sortKey: "NONE",
+    isReverse: false
+  });
 
   /*
     ==================================
@@ -48,15 +51,19 @@ const TodoList = ({todoList, listFetched, onRemoveTodo, onEditTodoModal}) => {
   */
 
   const handleSort = (sortKey) => {
-    setSort(sortKey);
+    const isReverse = sortKey === sort.sortKey && !sort.isReverse;
+    setSort({
+      sortKey: sortKey,
+      isReverse: isReverse
+    });
   }
 
   const handleRemoveTodo = (id) => {
     onRemoveTodo(id);
   };
 
-  const sortFunction = SORTS[sort];
-  const sortedList = sortFunction(todoList);
+  const sortFunction = SORTS[sort.sortKey];
+  const sortedList = sort.isReverse ? sortFunction(todoList).reverse() : sortFunction(todoList);
 
   return (
       <ul className={styles.todoList}>
