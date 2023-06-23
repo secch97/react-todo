@@ -16,3 +16,63 @@
     width: 80%;
     min-width: 80%;
 }
+
+.listItem{
+    /* Display */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    /* Spacing */
+    padding: 10px;
+    /* Sizing */
+    width: 100%;
+    min-width: 100%;
+    /* Font */
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.listItem button{
+    /* Display */
+    display: flex;
+    justify-content: center;
+    /*Text decoration*/
+    text-align: justify;
+}
+
+.listItem button:hover,
+.listItem button:hover *{
+    /* Animation */
+    transform: scale(1.00);
+    transition: ease-in-out 0.15s;
+}
+
+.listItem button.title{
+    /* Display */
+    justify-content: center;
+    /* Sizing */
+    width: 50%;
+}
+
+.listItem button.date{
+    /* Display */
+    justify-content: center;
+    /*Sizing*/
+    width: 25%;
+}
+
+.listItem button.actions{
+    /*Display*/
+    justify-content: center;
+    /*Sizing*/
+    width: 25%;
+    /*Cursor*/
+    cursor:default;
+}
+
+.listItem button.actions:disabled{
+    background-color: white;
+    border-color: #16213E;
+}
