@@ -51,7 +51,10 @@
 
 .listItem button.title{
     /* Display */
+    display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 10px;
     /* Sizing */
     width: 50%;
 }
@@ -64,7 +67,10 @@
 
 .listItem button.date{
     /* Display */
+    display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 10px;
     /*Sizing*/
     width: 25%;
 }

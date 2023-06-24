@@ -5,6 +5,7 @@ import TodoListItem from '../TodoListItem/TodoListItem';
 import styles from "./TodoList.module.css"
 // Third party libraries:
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const SORTS = {
   NONE: (todoList) => todoList,
@@ -68,8 +69,26 @@ const TodoList = ({todoList, listFetched, onRemoveTodo, onEditTodoModal}) => {
   return (
       <ul className={styles.todoList}>
         <li className={styles.listItem}>
-          <button className={sort.sortKey==="TITLE" ? `${styles.title} ${styles.active}` : styles.title} onClick={()=>handleSort("TITLE")}>Title:</button>
-          <button className={sort.sortKey==="DATE" ? `${styles.date} ${styles.active}` : styles.date} onClick={()=>handleSort("DATE")}>Created at:</button>
+          <button className={sort.sortKey==="TITLE" ? `${styles.title} ${styles.active}` : styles.title} onClick={()=>handleSort("TITLE")}>
+          {
+            sort.sortKey === "TITLE" && !sort.isReverse ? 
+            (<FontAwesomeIcon icon="fa-solid fa-caret-up" beat size="sm" style={{color: "#ffffff",}} />) : 
+            sort.sortKey === "TITLE" && sort.isReverse ?
+            (<FontAwesomeIcon icon="fa-solid fa-caret-down" beat size="sm" style={{color: "#ffffff",}} />) :
+            (null)
+          }
+            Title:
+          </button>
+          <button className={sort.sortKey==="DATE" ? `${styles.date} ${styles.active}` : styles.date} onClick={()=>handleSort("DATE")}>
+          {
+            sort.sortKey === "DATE" && !sort.isReverse ? 
+            (<FontAwesomeIcon icon="fa-solid fa-caret-up" beat size="sm" style={{color: "#ffffff",}} />) : 
+            sort.sortKey === "DATE" && sort.isReverse ?
+            (<FontAwesomeIcon icon="fa-solid fa-caret-down" beat size="sm" style={{color: "#ffffff",}} />) :
+            (null)
+          }
+            Created at:
+          </button>
           <button className={styles.actions} disabled>Actions:</button>
         </li>
         {
