@@ -56,6 +56,12 @@
     width: 50%;
 }
 
+.listItem button.active{
+    /*Colors*/
+    background-color: #E94550;
+    color: white;
+}
+
 .listItem button.date{
     /* Display */
     justify-content: center;

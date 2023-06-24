@@ -51,7 +51,7 @@ const TodoList = ({todoList, listFetched, onRemoveTodo, onEditTodoModal}) => {
   */
 
   const handleSort = (sortKey) => {
-    const isReverse = sortKey === sort.sortKey && !sort.isReverse;
+    const isReverse = (sortKey === sort.sortKey && !sort.isReverse);
     setSort({
       sortKey: sortKey,
       isReverse: isReverse
@@ -68,8 +68,8 @@ const TodoList = ({todoList, listFetched, onRemoveTodo, onEditTodoModal}) => {
   return (
       <ul className={styles.todoList}>
         <li className={styles.listItem}>
-          <button className={styles.title} onClick={()=>handleSort("TITLE")}>Title:</button>
-          <button className={styles.date} onClick={()=>handleSort("DATE")}>Created at:</button>
+          <button className={sort.sortKey==="TITLE" ? `${styles.title} ${styles.active}` : styles.title} onClick={()=>handleSort("TITLE")}>Title:</button>
+          <button className={sort.sortKey==="DATE" ? `${styles.date} ${styles.active}` : styles.date} onClick={()=>handleSort("DATE")}>Created at:</button>
           <button className={styles.actions} disabled>Actions:</button>
         </li>
         {

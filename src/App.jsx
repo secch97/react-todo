@@ -115,6 +115,7 @@ const App = () => {
       const data = await response.json();
       const updatedTodo = {
         title: data.fields.title,
+        createdAt: data.fields.createdAt,
         id: data.id
       }
       return updatedTodo;
@@ -176,7 +177,7 @@ const App = () => {
     if (typeof updatedTodo === "object"){
       setTodoList(todoList.map((todo) => {
         if (todo.id === updatedTodo.id){
-          return ({id: todo.id, title: updatedTodo.title});
+          return ({id: todo.id, title: updatedTodo.title, createdAt: todo.createdAt});
         }
         else{
           return todo;
