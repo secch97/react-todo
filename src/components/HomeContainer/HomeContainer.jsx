@@ -23,6 +23,11 @@ const HomeContainer = () => {
                     src="../../images/to-do.png"
                     alt='App logo'
                 />
+                <img
+                    className={styles.jointPanels}
+                    src="../../images/joint-panels.png"
+                    alt='Man and woman holding a phone'
+                />
                 <h1>To Do App</h1>
                 <h2>Organize, Accomplish, Succeed</h2>
                 <button>

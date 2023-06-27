@@ -11,7 +11,7 @@ main.homeContainer{
     justify-content: center;
     align-items: center;
     /* Spacing */
-    padding: 0px 50px;
+    padding: 0px 50px 10px 50px;
 }
 
 a{
@@ -20,10 +20,11 @@ a{
     color: black;
 }
 
+
 .homePanelLeft img{
     /* Sizing */
-    height: 75vh;
-    width: 350px;
+    height: 65vh;
+    width: 400px;
 }
 
 .homePanelCenter{
@@ -33,17 +34,38 @@ a{
     justify-content: center;
     align-items: center;
     /* Sizing */
-    width: 350px;
+    width: 400px;
     /* Font */
     text-align: center;
 }
 
 .homePanelCenter img.toDoLogo{
+    /* Sizing */
     width: 150px;
+}
+
+.homePanelCenter img.jointPanels{
+    /* Display */
+    display: none;
+    /* Sizing */
+    width: 350px;
 }
 
 .homePanelRight img{
     /* Sizing */
-    height: 75vh;
-    width: 350px;
+    height: 65vh;
+    width: 400px;
+}
+
+@media (max-width: 1240px) {
+    .homePanelLeft,
+    .homePanelCenter img.toDoLogo,
+    .homePanelRight{
+        display: none;
+    }
+
+    .homePanelCenter img.jointPanels{
+        display: flex;
+    }
+
 }
