@@ -225,7 +225,7 @@ const TodoContainer = ({tableName}) => {
 };
 
 TodoContainer.propTypes = {
-    
+    tableName: PropTypes.string.isRequired
 };
 
 export {

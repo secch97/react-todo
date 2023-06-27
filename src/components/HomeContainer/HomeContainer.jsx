@@ -1,7 +1,8 @@
 import React from 'react';
-import styles from "./HomeContainer.module.css";
-import NavigationBar from "../NavigationBar/NavigationBar";
 import { Link } from 'react-router-dom';
+import PropTypes from "prop-types";
+import NavigationBar from "../NavigationBar/NavigationBar";
+import styles from "./HomeContainer.module.css";
 
 
 const HomeContainer = ({onTableName}) => {
@@ -45,6 +46,10 @@ const HomeContainer = ({onTableName}) => {
         </main>    
     </>
   )
-}
+};
 
-export default HomeContainer
+HomeContainer.propTypes = {
+    onTableName: PropTypes.func.isRequired
+};
+
+export default HomeContainer;
