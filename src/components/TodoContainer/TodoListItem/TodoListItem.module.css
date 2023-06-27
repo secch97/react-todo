@@ -36,6 +36,7 @@
     justify-content: center;
     /* Sizing */
     width: 50%;
+    overflow-wrap:anywhere;
 }
 
 .listItem span.date{
@@ -43,6 +44,7 @@
     justify-content: center;
     /*Sizing*/
     width: 25%;
+    overflow-wrap:anywhere;
 }
 
 .listItem:hover{
@@ -70,6 +72,8 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
+    /*Sizing*/
+    overflow-wrap:anywhere;
 }
 
 .removeButtonIcon{
@@ -150,5 +154,18 @@
 
     .listItem span{
         justify-content: center;
+    }
+
+    .listItem span.title{
+        /* Sizing */
+        width: 100%;
+        justify-content: center;
+    }
+
+    .listItem span.date{
+        /* Sizing */
+        width: 100%;
+        /* Font */
+        font-weight: 300;
     }
 }
