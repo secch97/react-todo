@@ -147,7 +147,7 @@ const TodoContainer = ({tableName}) => {
   */      
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [tableName]);
 
   /*
     ============================
