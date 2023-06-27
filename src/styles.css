@@ -53,6 +53,25 @@ main {
     height: 100%;
 }
 
+h1 {
+    /* Spacing */
+    margin-bottom: 0px;
+    /* Font */
+    font-weight: 500;
+    text-decoration: underline;
+    text-transform: uppercase;
+    color: white;
+}
+
+h2{
+    /* Spacing */
+    margin-top: 0px;
+    /* Font */
+    font-weight: 300;
+    text-transform: capitalize;
+    color: white;
+}
+
 input, 
 button {
     all:unset;

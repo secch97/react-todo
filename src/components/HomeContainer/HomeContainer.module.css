@@ -1,0 +1,49 @@
+header.homeContainer{
+    /* Sizing */
+    min-height: 100px;
+}
+
+main.homeContainer{
+    /* Display */
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* Spacing */
+    padding: 0px 50px;
+}
+
+a{
+    /* Font */
+    text-decoration: none;
+    color: black;
+}
+
+.homePanelLeft img{
+    /* Sizing */
+    height: 75vh;
+    width: 350px;
+}
+
+.homePanelCenter{
+    /* Display */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Sizing */
+    width: 350px;
+    /* Font */
+    text-align: center;
+}
+
+.homePanelCenter img.toDoLogo{
+    width: 150px;
+}
+
+.homePanelRight img{
+    /* Sizing */
+    height: 75vh;
+    width: 350px;
+}

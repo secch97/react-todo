@@ -4,15 +4,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 //CSS
 import styles from "./NavigationBar.module.css"
+import { Link } from 'react-router-dom';
 
 const NavigationBar = ({children}) => {
   return (
     <div className={styles.navBarContainer}>
       <nav className={styles.navBar}>
         <div className={styles.navBarLogoContainer}>
-          <a className={styles.navBarLogoLink} href="/">
+          <Link className={styles.navBarLogoLink} to="/">
             <img className={styles.navBarLogo} alt="Logo for the To Do App" src='../../images/to-do-logo.png'/>
-          </a>
+          </Link>
         </div>
         <div className={styles.navBarUserControlsContainer}>
           {children}
@@ -32,6 +33,6 @@ export {
   ============================
 */
 NavigationBar.propTypes = {
-  children: PropTypes.object.isRequired
+  children: PropTypes.object
 };
   
