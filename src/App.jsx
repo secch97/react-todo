@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 // Components
 import HomeContainer from './components/HomeContainer/HomeContainer';
 import TodoContainer from "./components/TodoContainer/TodoContainer";
@@ -10,6 +10,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const App = () => {
+  /*
+    ==================================
+    =             STATES             =
+    ==================================
+  */
+ const [table, setTable] = useState();
+  /*
+    ==================================
+    =            HANDLERS            =
+    ==================================
+  */
+  const handleTableName = (table) => {
+    setTable(table);
+  }
 
   return (
     /* Fragment creation */
@@ -20,7 +34,7 @@ const App = () => {
           exact
           element={(
             <>
-              <HomeContainer/>
+              <HomeContainer onTableName={handleTableName}/>
             </>
           )}
         /> 
@@ -28,7 +42,7 @@ const App = () => {
           path="/TodoList"
           element={(
             <>
-              <TodoContainer/>
+              <TodoContainer tableName={table}/>
             </>
           )}
         />

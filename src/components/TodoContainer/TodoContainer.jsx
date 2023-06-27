@@ -8,7 +8,7 @@ import styles from "./TodoContainer.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
-const TodoContainer = () => {
+const TodoContainer = ({tableName}) => {
   /*
     ============================
     =           HOOKS          =
@@ -27,7 +27,7 @@ const TodoContainer = () => {
     ============================
   */
   const fetchData = async () => {
-        const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${process.env.REACT_APP_TABLE_NAME}/?sort[0][field]=createdAt&sort[0][direction]=asc`;
+        const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${tableName}/?sort[0][field]=createdAt&sort[0][direction]=asc`;
         const options = {
           method:"GET",
           headers: {

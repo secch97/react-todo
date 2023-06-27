@@ -4,7 +4,7 @@ import NavigationBar from "../NavigationBar/NavigationBar";
 import { Link } from 'react-router-dom';
 
 
-const HomeContainer = () => {
+const HomeContainer = ({onTableName}) => {
   return (
     <>
         <header className={styles.homeContainer}>
@@ -30,7 +30,7 @@ const HomeContainer = () => {
                 />
                 <h1>To Do App</h1>
                 <h2>Organize, Accomplish, Succeed</h2>
-                <button>
+                <button onClick={() => onTableName("TodoList")}>
                     <Link to="/TodoList">
                         GET STARTED
                     </Link>
