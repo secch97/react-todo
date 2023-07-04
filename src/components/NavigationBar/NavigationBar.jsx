@@ -10,8 +10,8 @@ const NavigationBar = ({children}) => {
     <div className={styles.navBarContainer}>
       <nav className={styles.navBar}>
         <div className={styles.navBarLogoContainer}>
-          <Link className={styles.navBarLogoLink} to="/">
-            <img className={styles.navBarLogo} alt="Logo for the To Do App" src='../../images/to-do-logo.png'/>
+          <Link className={styles.navBarLogoLink} to="/react-todo">
+            <img className={styles.navBarLogo} alt="Logo for the To Do App" src='/react-todo/images/to-do-logo.png'/>
           </Link>
         </div>
         <div className={styles.navBarUserControlsContainer}>

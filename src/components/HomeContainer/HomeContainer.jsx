@@ -16,25 +16,25 @@ const HomeContainer = ({onTableName}) => {
         <main className={styles.homeContainer}>
             <div className={styles.homePanelLeft}>
                 <img
-                    src='../../images/left-panel.png'
+                    src='/react-todo/images/left-panel.png'
                     alt='A man holding a phone'
                 />
             </div>
             <div className={styles.homePanelCenter}>
                 <img
                     className={styles.toDoLogo}
-                    src="../../images/to-do.png"
+                    src="/react-todo/images/to-do.png"
                     alt='App logo'
                 />
                 <img
                     className={styles.jointPanels}
-                    src="../../images/joint-panels.png"
+                    src="/react-todo/images/joint-panels.png"
                     alt='Man and woman holding a phone'
                 />
                 <h1>To Do App</h1>
                 <h2>Organize, Accomplish, Succeed</h2>
                 
-                    <Link to="/TodoList" className={styles.homeContainerLink}>
+                    <Link to="/react-todo/TodoList" className={styles.homeContainerLink}>
                         <button onClick={() => onTableName("TodoList")}>
                             GET STARTED
                         </button>
@@ -42,7 +42,7 @@ const HomeContainer = ({onTableName}) => {
             </div>
             <div className={styles.homePanelRight}>
                 <img
-                    src='../../images/right-panel.png'
+                    src='/react-todo/images/right-panel.png'
                     alt='A woman holding a phone'
                 /> 
             </div>

@@ -40,6 +40,7 @@ const App = () => {
         /> 
         <Route
           path="/react-todo/TodoList"
+          exact
           element={(
             <>
               <TodoContainer tableName={table || "TodoList"}/>
