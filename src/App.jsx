@@ -15,7 +15,7 @@ const App = () => {
     =             STATES             =
     ==================================
   */
- const [table, setTable] = useState();
+ const [table, setTable] = useState("");
   /*
     ==================================
     =            HANDLERS            =
@@ -42,15 +42,15 @@ const App = () => {
           path="/TodoList"
           element={(
             <>
-              <TodoContainer tableName={table}/>
+              <TodoContainer tableName={table || "TodoList"}/>
             </>
           )}
         />
       </Routes>
       <Footer/>
-        <a className='button-top' onClick={scrollToTop}>
-          <FontAwesomeIcon icon={["fas", "circle-up"]} size="2x"/>
-        </a>
+      <a className='button-top' onClick={scrollToTop}>
+        <FontAwesomeIcon icon={["fas", "circle-up"]} size="2x"/>
+      </a>
     </BrowserRouter>
   );
 };

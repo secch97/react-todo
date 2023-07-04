@@ -63,7 +63,7 @@ const TodoContainer = ({tableName}) => {
             createdAt: createdAt
           }
         };
-        const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${process.env.REACT_APP_TABLE_NAME}\\`;
+        const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${tableName}\\`;
         const options = {
           method: "POST",
           headers: {
@@ -96,7 +96,7 @@ const TodoContainer = ({tableName}) => {
             title: title,
           }
         };
-        const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${process.env.REACT_APP_TABLE_NAME}/${id}\\`;
+        const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${tableName}/${id}\\`;
         const options = {
           method: "PATCH",
           headers: {
@@ -123,7 +123,7 @@ const TodoContainer = ({tableName}) => {
   };
     
   const deleteData = async(id) => {
-        const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${process.env.REACT_APP_TABLE_NAME}/${id}\\`;
+        const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${tableName}/${id}\\`;
         const options = {
           method: "DELETE",
           headers: {

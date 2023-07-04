@@ -33,11 +33,12 @@ const HomeContainer = ({onTableName}) => {
                 />
                 <h1>To Do App</h1>
                 <h2>Organize, Accomplish, Succeed</h2>
-                <button onClick={() => onTableName("TodoList")}>
-                    <Link to="/TodoList">
-                        GET STARTED
+                
+                    <Link to="/TodoList" className={styles.homeContainerLink}>
+                        <button onClick={() => onTableName("TodoList")}>
+                            GET STARTED
+                        </button>
                     </Link>
-                </button>
             </div>
             <div className={styles.homePanelRight}>
                 <img

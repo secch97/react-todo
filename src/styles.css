@@ -24,6 +24,7 @@ body {
     margin: 0px;
     /* Sizing */
     width: 100%;
+    min-width: 100%;
     /* Colors */
     background-color: #16213E;
 }
@@ -173,7 +174,10 @@ footer{
     align-items: center;
     /* Spacing */
     width: 100%;
+    min-width: 100%;
+    height: 100vh;
     min-height: 100vh;
+    
 }
 
 .brand{

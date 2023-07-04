@@ -14,18 +14,37 @@ main.homeContainer{
     padding: 0px 50px 10px 50px;
 }
 
-a{
+a.homeContainerLink{
     /* Font */
     text-decoration: none;
     color: black;
 }
 
-
-.homePanelLeft img{
+.homePanelLeft,
+.homePanelRight{
     /* Sizing */
     height: 65vh;
-    width: 400px;
+    width: 450px;
 }
+
+.homePanelLeft{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.homePanelRight{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.homePanelLeft img,
+.homePanelRight img{
+    /* Sizing */
+    width: 100%;
+    height: inherit;
+}
+
+
 
 .homePanelCenter{
     /* Display */
@@ -51,21 +70,30 @@ a{
     width: 350px;
 }
 
-.homePanelRight img{
-    /* Sizing */
-    height: 65vh;
-    width: 400px;
-}
 
 @media (max-width: 1240px) {
+    main.homeContainer{
+        /* Display */
+        flex-direction: column;
+    }
+
     .homePanelLeft,
     .homePanelCenter img.toDoLogo,
     .homePanelRight{
         display: none;
     }
 
+    .homePanelCenter {
+        /* Sizing */
+        width: 100%;
+        min-width: 100%;
+        height: auto;
+    }
+
     .homePanelCenter img.jointPanels{
         display: flex;
+        max-width: 100%;
+        height: auto;
     }
 
 }
