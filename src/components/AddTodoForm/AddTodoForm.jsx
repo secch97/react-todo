@@ -65,15 +65,17 @@ const AddTodoForm = ({onAddTodo, isLoading, inputIsFocused}) => {
   );
 };
 
-export {
-    AddTodoForm as default
-};
-
 /*
   ============================
   =        PROP TYPES        =
   ============================
 */
 AddTodoForm.propTypes = {
-  onAddTodo: PropTypes.func.isRequired
+  onAddTodo: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  inputIsFocused: PropTypes.bool.isRequired
+};
+
+export {
+    AddTodoForm as default
 };

@@ -10,7 +10,6 @@ const InputWithLabel = ({children, inputId, inputType="text", inputPlaceholder, 
     ============================
   */
   const inputRef = useRef();
-  console.log(inputValue,isFocused);
   /*
     Won't provide dependency array in order 
     to give this side effect on mount and update
@@ -53,5 +52,7 @@ InputWithLabel.propTypes = {
   inputPlaceholder: PropTypes.string.isRequired,
   inputValue: PropTypes.string.isRequired,
   inputName: PropTypes.string.isRequired,
-  inputOnChange: PropTypes.func.isRequired
+  inputOnChange: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  isFocused: PropTypes.bool.isRequired
 };
