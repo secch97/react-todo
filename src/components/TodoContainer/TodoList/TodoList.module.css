@@ -57,6 +57,8 @@
     gap: 10px;
     /* Sizing */
     width: 50%;
+    /* Font */
+    text-align: center;
 }
 
 .listItem button.active{
@@ -73,6 +75,8 @@
     gap: 10px;
     /*Sizing*/
     width: 25%;
+    /* Font */
+    text-align: center;
 }
 
 .listItem button.actions{
@@ -80,6 +84,8 @@
     justify-content: center;
     /*Sizing*/
     width: 25%;
+    /* Font */
+    text-align: center;
     /*Cursor*/
     cursor:default;
 }
@@ -87,4 +93,22 @@
 .listItem button.actions:disabled{
     background-color: white;
     border-color: #16213E;
+}
+
+@media (max-width: 768px){
+    .listItem{
+        /*Display*/
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .listItem button.title,
+    .listItem button.date{
+        /* Sizing */
+        width: 100%;
+    }
+
+    .listItem button.actions{
+        display: none;
+    }
 }

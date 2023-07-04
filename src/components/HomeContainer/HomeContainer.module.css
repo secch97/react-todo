@@ -1,0 +1,99 @@
+header.homeContainer{
+    /* Sizing */
+    min-height: 100px;
+}
+
+main.homeContainer{
+    /* Display */
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* Spacing */
+    padding: 0px 50px 10px 50px;
+}
+
+a.homeContainerLink{
+    /* Font */
+    text-decoration: none;
+    color: black;
+}
+
+.homePanelLeft,
+.homePanelRight{
+    /* Sizing */
+    height: 65vh;
+    width: 450px;
+}
+
+.homePanelLeft{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.homePanelRight{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.homePanelLeft img,
+.homePanelRight img{
+    /* Sizing */
+    width: 100%;
+    height: inherit;
+}
+
+
+
+.homePanelCenter{
+    /* Display */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Sizing */
+    width: 400px;
+    /* Font */
+    text-align: center;
+}
+
+.homePanelCenter img.toDoLogo{
+    /* Sizing */
+    width: 150px;
+}
+
+.homePanelCenter img.jointPanels{
+    /* Display */
+    display: none;
+    /* Sizing */
+    width: 350px;
+}
+
+
+@media (max-width: 1240px) {
+    main.homeContainer{
+        /* Display */
+        flex-direction: column;
+    }
+
+    .homePanelLeft,
+    .homePanelCenter img.toDoLogo,
+    .homePanelRight{
+        display: none;
+    }
+
+    .homePanelCenter {
+        /* Sizing */
+        width: 100%;
+        min-width: 100%;
+        height: auto;
+    }
+
+    .homePanelCenter img.jointPanels{
+        display: flex;
+        max-width: 100%;
+        height: auto;
+    }
+
+}

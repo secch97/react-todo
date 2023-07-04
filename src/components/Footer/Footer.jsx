@@ -1,8 +1,8 @@
 import React from 'react';
-//Helpers
-import { getCurrentYear } from '../../helpers/getCurrentYear';
 // Third party libraries
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+//Helpers
+import { getCurrentYear } from '../../helpers/getCurrentYear';
 //CSS
 import styles from "./Footer.module.css"
 const Footer = () => {

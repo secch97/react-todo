@@ -1,8 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
+//Third party libraries:
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from "prop-types";
-
+//Components:
 import InputWithLabel from "../InputWithLabel/InputWithLabel";
+//CSS:
 import styles from "./EditForm.module.css"
 
 const EditTodoForm = ({modalData, onEditTodoModal, onEditTodo}) => {

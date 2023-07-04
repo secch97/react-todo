@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 //CSS
 import styles from "./AddTodoForm.module.css"
 
-
 const AddTodoForm = ({onAddTodo, isLoading, inputIsFocused}) => {
   /*
     ============================
