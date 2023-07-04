@@ -30,7 +30,7 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route 
-          path="react-todo/" 
+          path="/react-todo" 
           exact
           element={(
             <>
@@ -39,7 +39,7 @@ const App = () => {
           )}
         /> 
         <Route
-          path="react-todo/TodoList"
+          path="/react-todo/TodoList"
           element={(
             <>
               <TodoContainer tableName={table || "TodoList"}/>
