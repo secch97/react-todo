@@ -214,6 +214,7 @@ const TodoContainer = ({tableName}) => {
             : 
             (
               <div className={styles.todoListContainer}>
+                <h1>{tableName} table</h1>
                 <TodoList todoList={todoList} listFetched={listFetched} onRemoveTodo={handleRemoveTodo} onEditTodoModal={handleEditTodoModal}/>
                 <EditTodoForm modalData={modalData} onEditTodoModal={handleEditTodoModal} onEditTodo={handleEditTodo}/>
               </div>
