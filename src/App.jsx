@@ -31,7 +31,7 @@ const App = () => {
     ============================
   */
   const fetchData = async () => {
-    const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${process.env.REACT_APP_TABLE_NAME}?sort%5B0%5D%5Bfield%5D=createdAt&sort%5B0%5D%5Bdirection%5D=asc`;
+    const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${process.env.REACT_APP_TABLE_NAME}/?sort[0][field]=createdAt&sort[0][direction]=asc`;
     const options = {
       method:"GET",
       headers: {
@@ -47,6 +47,7 @@ const App = () => {
       const todos = data.records.map((todo) => {
         return {
           title: todo.fields.title,
+          createdAt: todo.fields.createdAt,
           id:todo.id
         };
       });
@@ -82,6 +83,7 @@ const App = () => {
       const data = await response.json();
       const newTodo = {
         title: data.fields.title,
+        createdAt: data.fields.createdAt,
         id: data.id
       }
       return newTodo;
@@ -113,6 +115,7 @@ const App = () => {
       const data = await response.json();
       const updatedTodo = {
         title: data.fields.title,
+        createdAt: data.fields.createdAt,
         id: data.id
       }
       return updatedTodo;
@@ -174,7 +177,7 @@ const App = () => {
     if (typeof updatedTodo === "object"){
       setTodoList(todoList.map((todo) => {
         if (todo.id === updatedTodo.id){
-          return ({id: todo.id, title: updatedTodo.title});
+          return ({id: todo.id, title: updatedTodo.title, createdAt: todo.createdAt});
         }
         else{
           return todo;

@@ -24,10 +24,25 @@
 }
 
 .listItem span{
+    /* Display */
     display: flex;
     justify-content: center;
     /*Text decoration*/
     text-align: justify;
+}
+
+.listItem span.title{
+    /* Display */
+    justify-content: center;
+    /* Sizing */
+    width: 50%;
+}
+
+.listItem span.date{
+    /* Display */
+    justify-content: center;
+    /*Sizing*/
+    width: 25%;
 }
 
 .listItem:hover{
@@ -37,12 +52,15 @@
     transition: 0.2s ease-in-out;
 }
 
+
 .todoItemControlsContainer{
     /* Display */
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    /* Sizing */
+    width: 25%;
 }
 
 .todoItemControls{
