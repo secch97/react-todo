@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-// CSS Modules
-import styles from "./TodoListItem.module.css";
 // Third party libraries:
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// CSS:
+import styles from "./TodoListItem.module.css";
 
 const getReadableDate = (date) => {
   return (`${date.getMonth()}/${date.getDate()}/${date.getFullYear()}, ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`);

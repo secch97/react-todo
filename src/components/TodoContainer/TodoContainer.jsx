@@ -1,12 +1,14 @@
-import PropTypes from "prop-types"
 import React, { useEffect, useState } from "react";
+//Third party libraries:
+import PropTypes from "prop-types"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+//Components:
 import NavigationBar from "../NavigationBar/NavigationBar"
 import AddTodoForm from "../AddTodoForm/AddTodoForm"
 import EditTodoForm from "../EditTodoForm/EditTodoForm"
 import TodoList from "./TodoList/TodoList"
+//CSS:
 import styles from "./TodoContainer.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 
 const TodoContainer = ({tableName}) => {
   /*

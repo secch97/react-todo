@@ -1,10 +1,9 @@
 import React from 'react';
-// Components
 // Third party libraries:
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 //CSS
 import styles from "./NavigationBar.module.css"
-import { Link } from 'react-router-dom';
 
 const NavigationBar = ({children}) => {
   return (

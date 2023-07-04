@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
+// Third party libraries:
+import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // Components
 import TodoListItem from '../TodoListItem/TodoListItem';
 // CSS
 import styles from "./TodoList.module.css"
-// Third party libraries:
-import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const SORTS = {
   NONE: (todoList) => todoList,

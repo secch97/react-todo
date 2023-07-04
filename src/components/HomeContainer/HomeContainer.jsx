@@ -1,9 +1,11 @@
 import React from 'react';
+//Third party libraries:
 import { Link } from 'react-router-dom';
 import PropTypes from "prop-types";
+//Components:
 import NavigationBar from "../NavigationBar/NavigationBar";
+//CSS:
 import styles from "./HomeContainer.module.css";
-
 
 const HomeContainer = ({onTableName}) => {
   return (
